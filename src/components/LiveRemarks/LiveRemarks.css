@@ -1,0 +1,29 @@
+.remark-tick {
+  color: white;
+  background-color: gray;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+}
+.remark-header {
+  background-color: #007a8a;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.remark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0 5px;
+}
+.live-remark {
+  background-image: linear-gradient(180deg, #71b6bf, #007a8a);
+}
+.remark-panel {
+  /* background-color: #007a8a; */
+}
+.color {
+  background-color: #007a8a;
+}

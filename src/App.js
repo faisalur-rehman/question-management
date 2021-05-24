@@ -10,6 +10,7 @@ import Projects from "./components/Projects/Projects";
 import Questions from "./components/Questions/Questions";
 import SavedRemarks from "./components/SavedRemarks/SavedRemarks";
 import SideBar from "./components/SideBar/SideBar";
+import LiveRemarks from "./components/LiveRemarks/LiveRemarks";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <SavedRemarks />
         </div>
         {/* <ArchivedQuestions /> */}
-        <LiveQuestions />
+        {/* <LiveQuestions /> */}
+        <LiveRemarks />
       </div>
       {/* <div>
         <Projects />
