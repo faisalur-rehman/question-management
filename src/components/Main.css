@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.content {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.content-left {
+  width: 50%;
+}
+.content-form {
+  width: 50%;
+}
+.steps {
+  margin: 0 100px;
+  margin-bottom: 0;
+  font-family: "Rubik", sans-serif;
+}
+p {
+  margin: 25px;
+}
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  margin: 40px 100px;
+}
+ol li {
+  counter-increment: my-awesome-counter;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.1rem;
+}
+ol li::before {
+  content: counter(my-awesome-counter) ". ";
+  color: orange;
+  font-weight: bold;
+}
+label {
+  display: block;
+  margin-bottom: 9px;
+}
+input {
+  height: 28px;
+  width: 300px;
+  margin-bottom: 19px;
+}
+input:last-child {
+  cursor: pointer;
+  margin-top: 10px;
+  width: 80px;
+  background-color: orange;
+  padding: 10px;
+  height: auto;
+  border-style: none;
+}

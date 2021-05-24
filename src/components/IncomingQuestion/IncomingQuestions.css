@@ -1,0 +1,5 @@
+.incoming-quesiton-panel {
+  max-height: 60vh;
+  overflow: auto;
+  background-color: white;
+}

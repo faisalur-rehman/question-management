@@ -1,0 +1,137 @@
+.options {
+  background-color: white;
+  font-weight: bold;
+  display: flex;
+  border-radius: 10px;
+  width: 88%;
+  margin: auto;
+  margin-left: 2%;
+}
+
+.creation {
+  padding: 20px;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.creation p {
+  margin-bottom: 0;
+}
+.admin-setting {
+  background-color: #ffdfdf;
+  /* background: transparent linear-gradient(#ff0000 0%, #ff7474 100%); */
+  border-radius: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+.admin-setting h3 {
+  color: black !important;
+}
+.admin-setting img {
+  width: 20px;
+  height: 20px;
+}
+.setting-presenter {
+  background: #fff2cd 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+}
+.setting-presenter img {
+  color: #fff8e6;
+}
+.copy {
+  color: white;
+  font-size: 1.5rem;
+}
+.setting-moderator {
+  background: #c4e6ff;
+}
+.setting-moderator img {
+  background: transparent linear-gradient(180deg, #005684 0%, #59b1f1 100%) 0%
+    0% no-repeat padding-box !important;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.setting-presenter .copy {
+  background: transparent linear-gradient(180deg, #ffbb00 0%, #fff574 100%) 0%
+    0% no-repeat;
+  padding: 0 !important;
+  border-radius: 25px;
+}
+
+.setting-moderator .copy {
+  background: transparent linear-gradient(180deg, #005684 0%, #59b1f1 100%) 0%
+    0% no-repeat padding-box;
+}
+
+.setting-icon {
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  padding: 5px;
+  padding-bottom: 1px;
+  font-size: 1.3rem;
+}
+.presenter {
+  background: transparent linear-gradient(180deg, #ffbb00 0%, #fff574 100%) 0%
+    0% no-repeat padding-box;
+}
+.card {
+  display: flex;
+}
+.setting-card,
+.option-card {
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px 32px;
+}
+.setting-card {
+  width: 15%;
+  min-height: 30vh;
+  margin-left: 2%;
+}
+.option-card {
+  width: 60%;
+  margin-left: 30px;
+}
+.setting-card h4,
+.setting-card h2,
+.setting-card h3,
+.setting-card p {
+  margin-bottom: 12px;
+}
+.moderator-switch,
+.option-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.moderator-switch {
+}
+.option-switch {
+  /* justify-content: start; */
+  width: 50%;
+  margin-bottom: -10px;
+}
+.detail {
+  display: flex;
+  justify-content: space-between;
+}
+.text-size {
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+.active {
+  background-color: #007a8a;
+}

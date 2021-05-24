@@ -1,0 +1,52 @@
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  background-color: #00386b;
+  height: 80px;
+  padding: 0 50px;
+  color: white;
+  align-items: center;
+}
+img {
+  max-width: 120px;
+  max-height: 150px;
+  margin-left: 45px;
+  vertical-align: middle;
+}
+a {
+  color: white;
+  text-decoration: none;
+  margin: 15px;
+  cursor: pointer;
+}
+a:hover {
+  color: orange;
+}
+
+.hvr-underline-from-center {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.hvr-underline-from-center:before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: orange;
+  height: 2px;
+  transition-property: left, right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
