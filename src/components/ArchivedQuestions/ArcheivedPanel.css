@@ -1,0 +1,25 @@
+.archeived-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #a6a8b3;
+  padding: 5px 20px;
+  border-radius: 8px;
+}
+.back-live {
+  background-color: red;
+  border-radius: 8px;
+  padding: 4px;
+}
+.back-live span {
+  color: white;
+}
+
+.tick {
+  color: red;
+  background-color: white;
+  border-radius: 50%;
+}
+.archeived-header button {
+  background-color: white;
+}

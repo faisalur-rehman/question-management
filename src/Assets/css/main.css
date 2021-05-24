@@ -110,10 +110,6 @@ label {
 
 /*------------Question-----------*/
 
-.question {
-  width: 30% !important;
-}
-
 .question h2 {
   margin-left: 10px;
   margin-bottom: 10px;
@@ -123,7 +119,7 @@ label {
 }
 .form {
   background-color: #fff;
-  width: 494px;
+  width: 454px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -132,14 +128,15 @@ label {
 }
 .form label {
   display: block;
-  padding: 10px 0px 10px 10px;
+  padding: 5px 10px;
   color: #222943;
+  margin: 0;
 }
 .form input {
   background-color: #f7f7f7;
   margin: 10px;
-  width: 462px;
-  height: 43px;
+  width: 412px;
+  height: 33px;
   border: none;
   outline: none;
   padding: 10px;
@@ -147,8 +144,8 @@ label {
 .form textarea {
   background-color: #f7f7f7;
   margin: 10px;
-  width: 462px;
-  height: 293px;
+  width: 412px;
+  height: 193px;
   border: none;
   outline: none;
   padding: 10px;
@@ -238,7 +235,7 @@ label {
 .alarm-btn-group {
   font-family: "Poppins", sans-serif;
   background-color: #fff;
-  width: 494px;
+  width: 454px;
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -273,7 +270,7 @@ label {
 
 /*IncomingQuestionCard*/
 .IncomingQuestionCard {
-  width: 576px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(

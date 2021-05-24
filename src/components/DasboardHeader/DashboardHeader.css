@@ -1,0 +1,49 @@
+.dashboard-header-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.dashboard-header-col1 {
+  display: flex;
+  align-items: center;
+}
+.dashboard-header-col2 {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.dashboard-header-col2 p {
+  padding-left: 10px;
+}
+#bold {
+  font-weight: bold;
+  font-size: 20px;
+}
+.dashboard-header-col3 {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.dashboard-header-col3-icon1 {
+  background-color: #a6a8b3;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.dashboard-header-col3 i {
+  color: #fff;
+}
+.dashboard-header-col3-icon2 {
+  padding-left: 3px;
+}
+.dashboard-header-title {
+  font-family: Poppins-light;
+  font-size: 26px;
+  color: #333333;
+}
+.dashboard-header-title-img {
+  width: 23px;
+}

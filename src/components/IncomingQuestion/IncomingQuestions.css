@@ -1,5 +1,14 @@
-.incoming-quesiton-panel {
+.incoming-quesiton-panel,
+.saved-remarks-panel {
   max-height: 60vh;
+  overflow: auto;
+  background-color: white;
+}
+.saved-remarks-panel {
+  max-height: 40vh;
+}
+.archeived-quesiton-panel {
+  max-height: 90vh;
   overflow: auto;
   background-color: white;
 }
