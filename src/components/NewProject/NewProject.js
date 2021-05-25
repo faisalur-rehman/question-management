@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../Header/Header";
-import { Button, Input } from "reactstrap";
 import "./NewProject.css";
 import { MdDateRange } from "react-icons/md";
 import { BiTimeFive } from "react-icons/bi";
