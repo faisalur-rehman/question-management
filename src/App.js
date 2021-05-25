@@ -14,104 +14,122 @@ import LiveRemarks from "./components/LiveRemarks/LiveRemarks";
 import DarkArchived from "./components/DarkArchived/DarkArchived";
 import PresenterLiveQuestions from "./components/PresenterLiveQuestions/PresenterLiveQuestions";
 import ModeratorView from "./components/ModeratorView/ModeratorView";
+import AllScreens from "./components/AllScreens/AllScreens";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <DashboardHeader />
-      <div className="sidebar-header">
-        {/* <SideBar /> */}
-        {/* <Projects /> */}
-        {/* <ProfileSetting /> */}
-        {/* <NewProject /> */}
+    <Router>
+      <div className="App">
+        {/* <DashboardHeader /> */}
+        <div className="sidebar-header">
+          <Switch>
+            <Route exact path="/">
+              <AllScreens />
+            </Route>
+            {/* <Route path='/login'>
 
-        {/* screen 7 */}
+          </Route> */}
+            <Route path="/screen2">
+              <SideBar />
+              <Projects />
+            </Route>
+          </Switch>
 
-        <Questions />
+          {/* <SideBar /> */}
+          {/* <Projects /> */}
+          {/* <ProfileSetting /> */}
+          {/* <NewProject /> */}
+
+          {/* screen 7 */}
+
+          {/* <Questions />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div>
-        <DarkArchived text={true} />
+        <DarkArchived text={true} /> */}
 
-        {/* screen 8 */}
+          {/* screen 8 */}
 
-        {/* <ModeratorView />
+          {/* <ModeratorView />
         <LiveQuestions />
         <PresenterLiveQuestions /> */}
 
-        {/* screen 9 */}
+          {/* screen 9 */}
 
-        {/* <ModeratorView />
+          {/* <ModeratorView />
         <LiveQuestions />
         <DarkArchived text={true} />
 
         {/* screen 10 */}
 
-        {/* <LiveQuestions />
+          {/* <LiveQuestions />
         <PresenterLiveQuestions />
         <div style={{ width: "80%" }}></div> */}
 
-        {/* screen 11 */}
+          {/* screen 11 */}
 
-        {/* <LiveQuestions />
+          {/* <LiveQuestions />
         <DarkArchived text={true} />
         <div style={{ width: "80%" }}></div> */}
 
-        {/* screen 14 */}
+          {/* screen 14 */}
 
-        {/* <ModeratorView />
+          {/* <ModeratorView />
         <LiveQuestions />
         <LiveRemarks /> */}
 
-        {/* screen 15 */}
+          {/* screen 15 */}
 
-        {/* <ModeratorView />
+          {/* <ModeratorView />
         <LiveQuestions />
         <DarkArchived /> */}
 
-        {/* screen 16 */}
+          {/* screen 16 */}
 
-        {/* <LiveQuestions />
+          {/* <LiveQuestions />
         <LiveRemarks />
         <div style={{ width: "80%" }}></div> */}
 
-        {/* screen 17 */}
+          {/* screen 17 */}
 
-        {/* <LiveQuestions />
+          {/* <LiveQuestions />
         <DarkArchived />
         <div style={{ width: "80%" }}></div> */}
 
-        {/* screen 18 */}
+          {/* screen 18 */}
 
-        {/* <Questions />
+          {/* <Questions />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div>
         <LiveRemarks /> */}
 
-        {/* screen 19 */}
-        {/* <Questions />
+          {/* screen 19 */}
+          {/* <Questions />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div>
         <DarkArchived /> */}
 
-        {/* <div style={{ display: "flex", flexDirection: "column" }}>
+          {/* <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div> */}
-        {/* <ArchivedQuestions /> */}
-        {/* <LiveRemarks /> */}
-        {/* <DarkArchived /> */}
-      </div>
-      {/* <div>
+          {/* <ArchivedQuestions /> */}
+          {/* <LiveRemarks /> */}
+          {/* <DarkArchived /> */}
+        </div>
+        {/* <div>
         <Projects />
       </div> */}
-      {/* <Navbar />
+        {/* <Navbar />
       <Main /> */}
-    </div>
+      </div>
+    </Router>
   );
 }
 

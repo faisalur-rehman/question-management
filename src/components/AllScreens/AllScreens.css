@@ -1,0 +1,8 @@
+.screen-button {
+  padding: 8px 16px;
+  background-color: #007a8a;
+  color: white;
+  border: 0;
+  margin: 20px 20px 0px 30px;
+  cursor: pointer;
+}

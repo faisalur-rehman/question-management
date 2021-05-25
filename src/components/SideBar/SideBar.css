@@ -1,9 +1,9 @@
 .sidebar {
   min-height: 80vh;
   background-color: white;
-  width: 15vw;
+  width: 22vw;
   margin-top: 30px;
-  padding: 30px 50px;
+  padding: 30px 40px;
   border-radius: 20px;
   box-shadow: 1px 1px 5px 1px rgb(235, 233, 233);
 }
