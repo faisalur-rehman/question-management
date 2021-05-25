@@ -16,6 +16,7 @@ import PresenterLiveQuestions from "./components/PresenterLiveQuestions/Presente
 import ModeratorView from "./components/ModeratorView/ModeratorView";
 import AllScreens from "./components/AllScreens/AllScreens";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
             <DashboardHeader />
             <AllScreens />
           </Route>
-          {/* <Route path='/login'>
-
-          </Route> */}
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/screen2">
             <div className="sidebar-header">
               <SideBar />
