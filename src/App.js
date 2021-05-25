@@ -22,121 +22,145 @@ function App() {
     <Router>
       <div className="App">
         {/* <DashboardHeader /> */}
-        <div className="sidebar-header">
-          <Switch>
-            <Route exact path="/">
-              <AllScreens />
-            </Route>
-            {/* <Route path='/login'>
+
+        <Switch>
+          <Route exact path="/">
+            <AllScreens />
+          </Route>
+          {/* <Route path='/login'>
 
           </Route> */}
-            <Route path="/screen2">
+          <Route path="/screen2">
+            <div className="sidebar-header">
               <SideBar />
               <Projects />
-            </Route>
-            <Route path="/screen4">
+            </div>
+          </Route>
+          <Route path="/screen4">
+            <div className="sidebar-header">
               <SideBar />
               <ProfileSetting />
-            </Route>
-            <Route path="/screen5">
+            </div>
+          </Route>
+          <Route path="/screen5">
+            <div className="sidebar-header">
               <SideBar />
               <NewProject />
-            </Route>
-          </Switch>
+            </div>
+          </Route>
+          <Route path="/screen6">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <ModeratorView />
+              <LiveQuestions />
+              <PresenterLiveQuestions />
+            </div>
+          </Route>
+          <Route path="/screen7">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <Questions />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <IncomingQuestion />
+                <SavedRemarks />
+              </div>
+              <DarkArchived text={true} />
+            </div>
+          </Route>
+        </Switch>
 
-          {/* <SideBar /> */}
-          {/* <Projects /> */}
-          {/* <ProfileSetting /> */}
-          {/* <NewProject /> */}
+        {/* <SideBar /> */}
+        {/* <Projects /> */}
+        {/* <ProfileSetting /> */}
+        {/* <NewProject /> */}
 
-          {/* screen 7 */}
+        {/* screen 7 */}
 
-          {/* <Questions />
+        {/* <Questions />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div>
         <DarkArchived text={true} /> */}
 
-          {/* screen 8 */}
+        {/* screen 8 */}
 
-          {/* <ModeratorView />
+        {/* <ModeratorView />
         <LiveQuestions />
         <PresenterLiveQuestions /> */}
 
-          {/* screen 9 */}
+        {/* screen 9 */}
 
-          {/* <ModeratorView />
+        {/* <ModeratorView />
         <LiveQuestions />
         <DarkArchived text={true} />
 
         {/* screen 10 */}
 
-          {/* <LiveQuestions />
+        {/* <LiveQuestions />
         <PresenterLiveQuestions />
         <div style={{ width: "80%" }}></div> */}
 
-          {/* screen 11 */}
+        {/* screen 11 */}
 
-          {/* <LiveQuestions />
+        {/* <LiveQuestions />
         <DarkArchived text={true} />
         <div style={{ width: "80%" }}></div> */}
 
-          {/* screen 14 */}
+        {/* screen 14 */}
 
-          {/* <ModeratorView />
+        {/* <ModeratorView />
         <LiveQuestions />
         <LiveRemarks /> */}
 
-          {/* screen 15 */}
+        {/* screen 15 */}
 
-          {/* <ModeratorView />
+        {/* <ModeratorView />
         <LiveQuestions />
         <DarkArchived /> */}
 
-          {/* screen 16 */}
+        {/* screen 16 */}
 
-          {/* <LiveQuestions />
+        {/* <LiveQuestions />
         <LiveRemarks />
         <div style={{ width: "80%" }}></div> */}
 
-          {/* screen 17 */}
+        {/* screen 17 */}
 
-          {/* <LiveQuestions />
+        {/* <LiveQuestions />
         <DarkArchived />
         <div style={{ width: "80%" }}></div> */}
 
-          {/* screen 18 */}
+        {/* screen 18 */}
 
-          {/* <Questions />
+        {/* <Questions />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div>
         <LiveRemarks /> */}
 
-          {/* screen 19 */}
-          {/* <Questions />
+        {/* screen 19 */}
+        {/* <Questions />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div>
         <DarkArchived /> */}
 
-          {/* <div style={{ display: "flex", flexDirection: "column" }}>
+        {/* <div style={{ display: "flex", flexDirection: "column" }}>
           <IncomingQuestion />
           <SavedRemarks />
         </div> */}
-          {/* <ArchivedQuestions /> */}
-          {/* <LiveRemarks /> */}
-          {/* <DarkArchived /> */}
-        </div>
-        {/* <div>
+        {/* <ArchivedQuestions /> */}
+        {/* <LiveRemarks /> */}
+        {/* <DarkArchived /> */}
+      </div>
+      {/* <div>
         <Projects />
       </div> */}
-        {/* <Navbar />
+      {/* <Navbar />
       <Main /> */}
-      </div>
     </Router>
   );
 }

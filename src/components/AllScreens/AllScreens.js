@@ -26,37 +26,59 @@ const AllScreens = () => {
         </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 6</button>
+        <Link to="/screen6">
+          <button className="screen-button">Screen 6</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 7</button>
+        <Link to="/screen7">
+          <button className="screen-button">Screen 7</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 8</button>
+        <Link to="/screen8">
+          <button className="screen-button">Screen 8</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 9</button>
+        <Link to="/screen9">
+          <button className="screen-button">Screen 9</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 10</button>
+        <Link to="/screen10">
+          <button className="screen-button">Screen 10</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 11</button>
+        <Link to="/screen11">
+          <button className="screen-button">Screen 11</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 13</button>
+        <Link to="/screen13">
+          <button className="screen-button">Screen 13</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 14</button>
+        <Link to="/screen14">
+          <button className="screen-button">Screen 14</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 15</button>
+        <Link to="/screen14">
+          <button className="screen-button">Screen 14</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 16</button>
+        <Link to="/screen15">
+          <button className="screen-button">Screen 15</button>
+        </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 17</button>
+        <Link to="/screen16">
+          <button className="screen-button">Screen 16</button>
+        </Link>
       </div>
       <div>
         <button className="screen-button">Screen 18</button>
