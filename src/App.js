@@ -67,6 +67,97 @@ function App() {
               <DarkArchived text={true} />
             </div>
           </Route>
+          <Route path="/screen8">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <ModeratorView />
+              <LiveQuestions />
+              <PresenterLiveQuestions />
+            </div>
+          </Route>
+          <Route path="/screen9">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <ModeratorView />
+              <LiveQuestions />
+              <DarkArchived text={true} />
+            </div>
+          </Route>
+          <Route path="/screen10">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <LiveQuestions />
+              <PresenterLiveQuestions />
+              <div style={{ width: "80%" }}></div>
+            </div>
+          </Route>
+          <Route path="/screen11">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <LiveQuestions />
+              <DarkArchived text={true} />
+              <div style={{ width: "80%" }}></div>
+            </div>
+          </Route>
+          <Route path="/screen13">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <Questions />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <IncomingQuestion />
+                <SavedRemarks />
+              </div>
+              <LiveQuestions />
+            </div>
+          </Route>
+          <Route path="/screen14">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <ModeratorView />
+              <LiveQuestions />
+              <LiveRemarks />
+            </div>
+          </Route>
+          <Route path="/screen15">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <LiveQuestions />
+              <DarkArchived text={true} />
+              <div style={{ width: "80%" }}></div>
+            </div>
+          </Route>
+          <Route path="/screen16">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <LiveQuestions />
+              <DarkArchived text={true} />
+              <div style={{ width: "80%" }}></div>
+            </div>
+          </Route>
+          <Route path="/screen17">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <LiveQuestions />
+              <DarkArchived text={true} />
+              <div style={{ width: "80%" }}></div>
+            </div>
+          </Route>
+          <Route path="/screen18">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <LiveQuestions />
+              <DarkArchived text={true} />
+              <div style={{ width: "80%" }}></div>
+            </div>
+          </Route>
+          <Route path="/screen19">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <LiveQuestions />
+              <DarkArchived text={true} />
+              <div style={{ width: "80%" }}></div>
+            </div>
+          </Route>
         </Switch>
 
         {/* <SideBar /> */}
