@@ -121,9 +121,9 @@ function App() {
           <Route path="/screen15">
             <DashboardHeader />
             <div className="sidebar-header">
+              <ModeratorView />
               <LiveQuestions />
-              <DarkArchived text={true} />
-              <div style={{ width: "80%" }}></div>
+              <DarkArchived />
             </div>
           </Route>
           <Route path="/screen16">
