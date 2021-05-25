@@ -130,7 +130,7 @@ function App() {
             <DashboardHeader />
             <div className="sidebar-header">
               <LiveQuestions />
-              <DarkArchived text={true} />
+              <LiveRemarks />
               <div style={{ width: "80%" }}></div>
             </div>
           </Route>
