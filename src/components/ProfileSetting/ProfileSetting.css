@@ -10,7 +10,7 @@
 
 .creation {
   padding: 20px;
-  width: 15%;
+  width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 15%;
+  width: 20%;
   padding: 10px 20px;
   margin: 0 10px;
 }
@@ -94,7 +94,7 @@
   padding: 25px 32px;
 }
 .setting-card {
-  width: 15%;
+  width: 25%;
   min-height: 30vh;
   margin-left: 2%;
 }
@@ -114,11 +114,10 @@
   align-items: center;
   justify-content: space-between;
 }
-.moderator-switch {
-}
+
 .option-switch {
   /* justify-content: start; */
-  width: 50%;
+  width: 60%;
   margin-bottom: -10px;
 }
 .detail {

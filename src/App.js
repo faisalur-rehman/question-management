@@ -34,6 +34,10 @@ function App() {
               <SideBar />
               <Projects />
             </Route>
+            <Route path="/screen4">
+              <SideBar />
+              <ProfileSetting />
+            </Route>
           </Switch>
 
           {/* <SideBar /> */}
