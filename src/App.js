@@ -1,7 +1,7 @@
 import "./App.css";
-import ArchivedQuestions from "./components/ArchivedQuestions/ArchivedQuestions";
+// import ArchivedQuestions from "./components/ArchivedQuestions/ArchivedQuestions";
+import "./components/ArchivedQuestions/ArcheivedPanel.css";
 import DashboardHeader from "./components/DasboardHeader/DashboardHeader";
-import Header from "./components/Header/Header";
 import IncomingQuestion from "./components/IncomingQuestion/IncomingQuestion";
 import LiveQuestions from "./components/LiveQuestions/LiveQuestions";
 import NewProject from "./components/NewProject/NewProject";
@@ -145,17 +145,23 @@ function App() {
           <Route path="/screen18">
             <DashboardHeader />
             <div className="sidebar-header">
-              <LiveQuestions />
-              <DarkArchived text={true} />
-              <div style={{ width: "80%" }}></div>
+              <Questions />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <IncomingQuestion />
+                <SavedRemarks />
+              </div>
+              <LiveRemarks />
             </div>
           </Route>
           <Route path="/screen19">
             <DashboardHeader />
             <div className="sidebar-header">
-              <LiveQuestions />
-              <DarkArchived text={true} />
-              <div style={{ width: "80%" }}></div>
+              <Questions />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <IncomingQuestion />
+                <SavedRemarks />
+              </div>
+              <DarkArchived />
             </div>
           </Route>
         </Switch>
