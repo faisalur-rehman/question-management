@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const AllScreens = () => {
   return (
-    <div>
+    <div className="all-screens">
       <div>
         <Link to="/login">
           <button className="screen-button">Screen 1</button>

@@ -21,10 +21,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <DashboardHeader /> */}
-
         <Switch>
           <Route exact path="/">
+            <DashboardHeader />
             <AllScreens />
           </Route>
           {/* <Route path='/login'>
