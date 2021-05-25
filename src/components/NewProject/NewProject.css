@@ -39,15 +39,17 @@ label {
   background-color: #007a8a;
   border-radius: 5px;
   color: white;
+  font-size: 1.6rem;
 }
 .time-details {
   display: flex;
 }
 
 .save-btn {
-  display: inline-block;
+  /* display: inline-block; */
   margin-top: 10px;
   /* text-align: right; */
   margin-left: 30px;
   float: right;
+  margin-right: 60px;
 }

@@ -82,7 +82,7 @@ label {
 .input {
   width: 310px;
   height: 38px;
-  display: block;
+  /* display: block; */
   outline: none;
   border: none;
   background-color: #f7f7f7;

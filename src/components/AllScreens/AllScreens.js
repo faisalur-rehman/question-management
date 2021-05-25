@@ -21,7 +21,9 @@ const AllScreens = () => {
         </Link>
       </div>
       <div>
-        <button className="screen-button">Screen 5</button>
+        <Link to="/screen5">
+          <button className="screen-button">Screen 5</button>
+        </Link>
       </div>
       <div>
         <button className="screen-button">Screen 6</button>
