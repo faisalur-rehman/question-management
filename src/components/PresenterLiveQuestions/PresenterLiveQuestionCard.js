@@ -2,23 +2,18 @@ import React from "react";
 import "../../Assets/css/main.css";
 import success from "../../Assets/success.png";
 
-const LiveRemarkCard = () => {
+const PresenterLiveQuestionCard = () => {
   return (
     <section
-      className="IncomingQuestionCard live-remark"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "row",
-        borderRadius: 0,
-      }}
+      className="live-presenter"
+      style={{ display: "flex", alignItems: "center" }}
     >
       <i
         className="fas fa-grip-lines"
-        style={{ padding: "0 15px 0 0", color: "white" }}
+        style={{ padding: "0 15px", color: "white" }}
       ></i>
       <div>
-        <div className="card-header">
+        <div className="card-header" style={{ padding: 7 }}>
           <div>
             <i className="fa fa-ellipsis-v"></i>
           </div>
@@ -47,4 +42,4 @@ const LiveRemarkCard = () => {
   );
 };
 
-export default LiveRemarkCard;
+export default PresenterLiveQuestionCard;

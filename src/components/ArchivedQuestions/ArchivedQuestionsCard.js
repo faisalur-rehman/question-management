@@ -1,9 +1,10 @@
 import React from "react";
 import "../../Assets/css/main.css";
 
-const ArchivedQuestionCard = () => {
+const ArchivedQuestionCard = ({ dark }) => {
+  let bg = dark ? "dark" : "";
   return (
-    <section className="IncomingQuestionCard">
+    <section className={`IncomingQuestionCard ${bg}`}>
       <div className="card-header">
         <div>{/* <i className="fa fa-ellipsis-v"></i> */}</div>
         <div>

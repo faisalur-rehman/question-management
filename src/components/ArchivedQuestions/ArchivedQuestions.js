@@ -1,7 +1,7 @@
 import React from "react";
 import ArchivedQuestionCard from "./ArchivedQuestionsCard";
 import "./ArcheivedPanel.css";
-const ArchivedQuestions = () => {
+const ArchivedQuestions = (props) => {
   return (
     <div style={{ marginLeft: 10 }}>
       <h2 className="incoming">Saved Remarks</h2>
@@ -16,11 +16,11 @@ const ArchivedQuestions = () => {
         </button>
       </div>
       <div className="archeived-quesiton-panel">
-        <ArchivedQuestionCard />
-        <ArchivedQuestionCard />
-        <ArchivedQuestionCard />
-        <ArchivedQuestionCard />
-        <ArchivedQuestionCard />
+        <ArchivedQuestionCard dark={props.dark} />
+        <ArchivedQuestionCard dark={props.dark} />
+        <ArchivedQuestionCard dark={props.dark} />
+        <ArchivedQuestionCard dark={props.dark} />
+        <ArchivedQuestionCard dark={props.dark} />
       </div>
     </div>
   );

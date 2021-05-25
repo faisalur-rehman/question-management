@@ -1,20 +1,19 @@
 import React from "react";
 import "../../Assets/css/main.css";
-import place from "../../Assets/place.png";
 
-const SavedRemarksCard = () => {
+const DarkArchivedCard = ({ text }) => {
   return (
-    <section className="IncomingQuestionCard" style={{ width: 440 }}>
-      <div className="card-header" style={{ alignItems: "center" }}>
-        <div>
-          <i className="fa fa-ellipsis-v"></i>
-        </div>
+    <section className="IncomingQuestionCard dark">
+      <div className="card-header">
+        <div>{/* <i className="fa fa-ellipsis-v"></i> */}</div>
         <div>
           <p style={{ textAlign: "center" }}>2:00</p>
-          {/* <h5>Hans Terlouw</h5> */}
+          {text && <h5>Mathew Perry</h5>}
         </div>
         <div>
-          <img src={place} alt="" />
+          <button className="reload">
+            <i class="fas fa-redo-alt"></i>
+          </button>
         </div>
       </div>
       <div className="card-body">
@@ -29,4 +28,4 @@ const SavedRemarksCard = () => {
   );
 };
 
-export default SavedRemarksCard;
+export default DarkArchivedCard;

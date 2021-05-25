@@ -1,7 +1,8 @@
 import React from "react";
 import "../../Assets/css/main.css";
-
-const Questions = () => {
+import "./Question.css";
+const Questions = (props) => {
+  let bg = props.alarmActive ? "bg" : "";
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <section className="question">
@@ -38,7 +39,7 @@ const Questions = () => {
       <section className="alarm">
         <h2>Presenter Alarm</h2>
         <div className="alarm-btn-group">
-          <button>
+          <button className={`${bg}`}>
             <i className="far fa-volume-up"></i>
             Audio Alarm
           </button>
