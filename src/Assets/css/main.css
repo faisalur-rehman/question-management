@@ -281,7 +281,7 @@ label {
   padding: 20px;
   color: #222943;
   font-size: 15px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 .card-header {
   display: flex;
