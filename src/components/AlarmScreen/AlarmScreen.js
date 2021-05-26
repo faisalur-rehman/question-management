@@ -7,7 +7,7 @@ import "./AlarmScreen.css";
 
 const AlarmScreen = () => {
   return (
-    <div className="alarm">
+    <div className="alarm-presenter">
       <div className="warning">
         <div>
           <img src={warning} alt="" />
