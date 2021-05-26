@@ -164,6 +164,57 @@ function App() {
               <DarkArchived />
             </div>
           </Route>
+          <Route path="/screen20">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <Questions />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "30vw",
+                }}
+              >
+                <IncomingQuestion noQuestion={true} />
+                <SavedRemarks noRemarks={true} />
+              </div>
+              <PresenterLiveQuestions noQuestion={true} />
+            </div>
+          </Route>
+          <Route path="/screen21">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <Questions />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "34vw",
+                }}
+              >
+                <IncomingQuestion noQuestion={true} />
+                <SavedRemarks noRemarks={true} />
+              </div>
+              <LiveRemarks noRemarks={true} />
+            </div>
+          </Route>
+          <Route path="/screen22">
+            <DashboardHeader />
+            <div className="sidebar-header">
+              <Questions />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "34vw",
+                }}
+              >
+                <IncomingQuestion noQuestion={true} />
+                <SavedRemarks noRemarks={true} />
+              </div>
+              <LiveQuestions noQuestions={true} />
+            </div>
+          </Route>
         </Switch>
 
         {/* <SideBar /> */}

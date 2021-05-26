@@ -3,7 +3,7 @@ import React from "react";
 import "./LiveQuestion.css";
 import LiveQuestionCard from "./LiveQuestionCard";
 
-const LiveQuestions = () => {
+const LiveQuestions = ({ noQuestions }) => {
   return (
     <div style={{ marginLeft: 10 }}>
       <h2 className="incoming">Live Questions</h2>
@@ -21,11 +21,17 @@ const LiveQuestions = () => {
         </button>
       </div>
       <div className="archeived-quesiton-panel">
-        <LiveQuestionCard />
-        <LiveQuestionCard />
-        <LiveQuestionCard />
-        <LiveQuestionCard />
-        <LiveQuestionCard />
+        {!noQuestions ? (
+          <>
+            <LiveQuestionCard />
+            <LiveQuestionCard />
+            <LiveQuestionCard />
+            <LiveQuestionCard />
+            <LiveQuestionCard />
+          </>
+        ) : (
+          <div className="no-questions-moderator"></div>
+        )}
       </div>
     </div>
   );

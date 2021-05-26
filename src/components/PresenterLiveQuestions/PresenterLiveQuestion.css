@@ -14,3 +14,13 @@
     0% 0% no-repeat padding-box;
   border-radius: 0;
 }
+.no-question-presenter {
+  background-color: rgb(255, 187, 0, 0.9);
+  width: 34vw;
+  height: 80vh;
+}
+@media screen and (max-width: 1500px) {
+  .no-question-presenter {
+    width: 30vw;
+  }
+}

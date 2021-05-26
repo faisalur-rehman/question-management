@@ -14,3 +14,8 @@
     rgba(71, 158, 219, 1)
   );
 }
+.no-questions-moderator {
+  width: 450px;
+  height: 90vh;
+  background-color: #479edb;
+}
