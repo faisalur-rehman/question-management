@@ -1,0 +1,70 @@
+.presenter-tick {
+  padding: 2px;
+  background-color: white;
+  color: #878787;
+  border-radius: 50%;
+  border: 1px solid white;
+  font-size: 0.6rem;
+}
+.left {
+  margin-right: 10px;
+}
+.left div {
+  display: inline-block;
+  padding: 6px 10px;
+  background-color: #878787;
+  padding-top: 4px;
+  border-radius: 8px;
+}
+.right {
+}
+.presenter-card {
+  /* width: 70%; */
+  display: flex;
+  background-color: #242427;
+  color: white;
+  padding: 8px;
+  font-family: "Poppins", sans-serif !important;
+}
+.duration {
+  color: white;
+  text-align: center;
+  height: 23vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242427;
+  margin: 4px 0 20px 0;
+  cursor: pointer;
+}
+.duration h4 {
+  font-size: 2rem;
+}
+.duration p {
+  font-size: 2rem;
+}
+.duration h5 {
+  text-align: left;
+}
+.timer i {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+.remarks-presenter {
+  max-height: 55vh;
+  overflow: auto;
+}
+.attention-btn {
+  display: block;
+  float: right;
+  color: white;
+  padding: 5px 30px;
+  background-color: #858588;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-div {
+  /* padding: 15px; */
+  background-color: #242427;
+}

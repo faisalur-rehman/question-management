@@ -17,6 +17,7 @@ import ModeratorView from "./components/ModeratorView/ModeratorView";
 import AllScreens from "./components/AllScreens/AllScreens";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
+import PresenterView from "./components/PresenterView/PresenterView";
 
 function App() {
   return (
@@ -98,6 +99,9 @@ function App() {
               <DarkArchived text={true} />
               <div style={{ width: "80%" }}></div>
             </div>
+          </Route>
+          <Route path="/screen12">
+            <PresenterView />
           </Route>
           <Route path="/screen13">
             <DashboardHeader />
