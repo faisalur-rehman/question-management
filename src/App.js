@@ -18,6 +18,7 @@ import AllScreens from "./components/AllScreens/AllScreens";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import PresenterView from "./components/PresenterView/PresenterView";
+import AlarmScreen from "./components/AlarmScreen/AlarmScreen";
 
 function App() {
   return (
@@ -219,100 +220,13 @@ function App() {
               <LiveQuestions noQuestions={true} />
             </div>
           </Route>
+          <Route path="/screen23">
+            <div className="sidebar-header">
+              <AlarmScreen />
+            </div>
+          </Route>
         </Switch>
-
-        {/* <SideBar /> */}
-        {/* <Projects /> */}
-        {/* <ProfileSetting /> */}
-        {/* <NewProject /> */}
-
-        {/* screen 7 */}
-
-        {/* <Questions />
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <IncomingQuestion />
-          <SavedRemarks />
-        </div>
-        <DarkArchived text={true} /> */}
-
-        {/* screen 8 */}
-
-        {/* <ModeratorView />
-        <LiveQuestions />
-        <PresenterLiveQuestions /> */}
-
-        {/* screen 9 */}
-
-        {/* <ModeratorView />
-        <LiveQuestions />
-        <DarkArchived text={true} />
-
-        {/* screen 10 */}
-
-        {/* <LiveQuestions />
-        <PresenterLiveQuestions />
-        <div style={{ width: "80%" }}></div> */}
-
-        {/* screen 11 */}
-
-        {/* <LiveQuestions />
-        <DarkArchived text={true} />
-        <div style={{ width: "80%" }}></div> */}
-
-        {/* screen 14 */}
-
-        {/* <ModeratorView />
-        <LiveQuestions />
-        <LiveRemarks /> */}
-
-        {/* screen 15 */}
-
-        {/* <ModeratorView />
-        <LiveQuestions />
-        <DarkArchived /> */}
-
-        {/* screen 16 */}
-
-        {/* <LiveQuestions />
-        <LiveRemarks />
-        <div style={{ width: "80%" }}></div> */}
-
-        {/* screen 17 */}
-
-        {/* <LiveQuestions />
-        <DarkArchived />
-        <div style={{ width: "80%" }}></div> */}
-
-        {/* screen 18 */}
-
-        {/* <Questions />
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <IncomingQuestion />
-          <SavedRemarks />
-        </div>
-        <LiveRemarks /> */}
-
-        {/* screen 19 */}
-        {/* <Questions />
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <IncomingQuestion />
-          <SavedRemarks />
-        </div>
-        <DarkArchived /> */}
-
-        {/* <div style={{ display: "flex", flexDirection: "column" }}>
-          <IncomingQuestion />
-          <SavedRemarks />
-        </div> */}
-        {/* <ArchivedQuestions /> */}
-        {/* <LiveRemarks /> */}
-        {/* <DarkArchived /> */}
       </div>
-      {/* <div>
-        <Projects />
-      </div> */}
-      {/* <Navbar />
-      <Main /> */}
     </Router>
   );
 }
