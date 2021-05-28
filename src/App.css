@@ -1,7 +1,9 @@
-body {
-  background-color: #f5feff !important;
+.body {
+  background-color: #f5feff;
   font-family: "Poppins", sans-serif !important;
-  margin: 10px 50px !important;
+  padding: 10px 50px;
+  height: 100vh !important;
+  /* width: 100vw; */
 }
 * {
   padding: 0;

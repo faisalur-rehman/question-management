@@ -23,210 +23,246 @@ import AlarmScreen from "./components/AlarmScreen/AlarmScreen";
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Switch>
+      <Switch>
+        <div className="App">
           <Route exact path="/">
-            <DashboardHeader />
-            <AllScreens />
+            <div className="body">
+              <DashboardHeader />
+              <AllScreens />
+            </div>
           </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/screen2">
-            <div className="sidebar-header">
+            <div className="sidebar-header body">
               <SideBar />
               <Projects />
             </div>
           </Route>
           <Route path="/screen4">
-            <div className="sidebar-header">
+            <div className="sidebar-header body">
               <SideBar />
               <ProfileSetting />
             </div>
           </Route>
           <Route path="/screen5">
-            <div className="sidebar-header">
+            <div className="sidebar-header body">
               <SideBar />
               <NewProject />
             </div>
           </Route>
           <Route path="/screen6">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <ModeratorView />
-              <LiveQuestions />
-              <PresenterLiveQuestions />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <ModeratorView />
+                <LiveQuestions />
+                <PresenterLiveQuestions />
+              </div>
             </div>
           </Route>
           <Route path="/screen7">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <Questions />
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <IncomingQuestion />
-                <SavedRemarks />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <Questions />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <IncomingQuestion />
+                  <SavedRemarks />
+                </div>
+                <DarkArchived text={true} />
               </div>
-              <DarkArchived text={true} />
             </div>
           </Route>
           <Route path="/screen8">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <ModeratorView />
-              <LiveQuestions />
-              <PresenterLiveQuestions />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <ModeratorView />
+                <LiveQuestions />
+                <PresenterLiveQuestions />
+              </div>
             </div>
           </Route>
           <Route path="/screen9">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <ModeratorView />
-              <LiveQuestions />
-              <DarkArchived text={true} />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <ModeratorView />
+                <LiveQuestions />
+                <DarkArchived text={true} />
+              </div>
             </div>
           </Route>
           <Route path="/screen10">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <LiveQuestions />
-              <PresenterLiveQuestions />
-              <div style={{ width: "80%" }}></div>
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <LiveQuestions />
+                <PresenterLiveQuestions />
+                <div style={{ width: "80%" }}></div>
+              </div>
             </div>
           </Route>
           <Route path="/screen11">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <LiveQuestions />
-              <DarkArchived text={true} />
-              <div style={{ width: "80%" }}></div>
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <LiveQuestions />
+                <DarkArchived text={true} />
+                <div style={{ width: "80%" }}></div>
+              </div>
             </div>
           </Route>
           <Route path="/screen12">
             <PresenterView />
           </Route>
           <Route path="/screen13">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <Questions />
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <IncomingQuestion />
-                <SavedRemarks />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <Questions />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <IncomingQuestion />
+                  <SavedRemarks />
+                </div>
+                <LiveQuestions />
               </div>
-              <LiveQuestions />
             </div>
           </Route>
           <Route path="/screen14">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <ModeratorView />
-              <LiveQuestions />
-              <LiveRemarks />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <ModeratorView />
+                <LiveQuestions />
+                <LiveRemarks />
+              </div>
             </div>
           </Route>
           <Route path="/screen15">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <ModeratorView />
-              <LiveQuestions />
-              <DarkArchived />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <ModeratorView />
+                <LiveQuestions />
+                <DarkArchived />
+              </div>
             </div>
           </Route>
           <Route path="/screen16">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <LiveQuestions />
-              <LiveRemarks />
-              <div style={{ width: "80%" }}></div>
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <LiveQuestions />
+                <LiveRemarks />
+                <div style={{ width: "80%" }}></div>
+              </div>
             </div>
           </Route>
           <Route path="/screen17">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <LiveQuestions />
-              <DarkArchived />
-              <div style={{ width: "80%" }}></div>
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <LiveQuestions />
+                <DarkArchived />
+                <div style={{ width: "80%" }}></div>
+              </div>
             </div>
           </Route>
           <Route path="/screen18">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <Questions />
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <IncomingQuestion />
-                <SavedRemarks />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <Questions />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <IncomingQuestion />
+                  <SavedRemarks />
+                </div>
+                <LiveRemarks />
               </div>
-              <LiveRemarks />
             </div>
           </Route>
           <Route path="/screen19">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <Questions />
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <IncomingQuestion />
-                <SavedRemarks />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <Questions />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <IncomingQuestion />
+                  <SavedRemarks />
+                </div>
+                <DarkArchived />
               </div>
-              <DarkArchived />
             </div>
           </Route>
           <Route path="/screen20">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <Questions />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "30vw",
-                }}
-              >
-                <IncomingQuestion noQuestion={true} />
-                <SavedRemarks noRemarks={true} />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <Questions />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "30vw",
+                  }}
+                >
+                  <IncomingQuestion noQuestion={true} />
+                  <SavedRemarks noRemarks={true} />
+                </div>
+                <PresenterLiveQuestions noQuestion={true} />
               </div>
-              <PresenterLiveQuestions noQuestion={true} />
             </div>
           </Route>
           <Route path="/screen21">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <Questions />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "34vw",
-                }}
-              >
-                <IncomingQuestion noQuestion={true} />
-                <SavedRemarks noRemarks={true} />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <Questions />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "34vw",
+                  }}
+                >
+                  <IncomingQuestion noQuestion={true} />
+                  <SavedRemarks noRemarks={true} />
+                </div>
+                <LiveRemarks noRemarks={true} />
               </div>
-              <LiveRemarks noRemarks={true} />
             </div>
           </Route>
           <Route path="/screen22">
-            <DashboardHeader />
-            <div className="sidebar-header">
-              <Questions />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "34vw",
-                }}
-              >
-                <IncomingQuestion noQuestion={true} />
-                <SavedRemarks noRemarks={true} />
+            <div className="body">
+              <DashboardHeader />
+              <div className="sidebar-header">
+                <Questions />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "34vw",
+                  }}
+                >
+                  <IncomingQuestion noQuestion={true} />
+                  <SavedRemarks noRemarks={true} />
+                </div>
+                <LiveQuestions noQuestions={true} />
               </div>
-              <LiveQuestions noQuestions={true} />
             </div>
           </Route>
           <Route path="/screen23">
-            <div className="sidebar-header">
-              <AlarmScreen />
+            <div className="body">
+              <div className="sidebar-header">
+                <AlarmScreen />
+              </div>
             </div>
           </Route>
-        </Switch>
-      </div>
+        </div>
+      </Switch>
     </Router>
   );
 }
