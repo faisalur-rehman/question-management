@@ -11,7 +11,8 @@ const PresenterLiveQuestions = ({ noQuestion }) => {
           marginLeft: 10,
           maxWidth: "500px",
           minWidth: "450px",
-          minHeight: "97vh",
+          height: "92vh",
+          overflow: "scroll",
         }}
         className="live-presenter"
       >
@@ -33,7 +34,7 @@ const PresenterLiveQuestions = ({ noQuestion }) => {
             Presenter
           </button>
         </div>
-        <div className="archeived-quesiton-panel">
+        <div className="">
           {!noQuestion ? (
             <>
               <PresenterLiveQuestionCard />

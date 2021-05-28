@@ -5,19 +5,27 @@
   background-color: white;
 }
 .live-presenter {
-  background: transparent
+  /* background: transparent
     linear-gradient(
       180deg,
       rgba(255, 188, 3, 0.6) 0%,
       rgba(255, 187, 0, 0.9) 100%
     )
+    0% 0% no-repeat padding-box; */
+  background: transparent
+    linear-gradient(
+      171deg,
+      rgb(244 189 33 / 30%) 0%,
+      rgb(255 193 23 / 85%) 100%
+    )
     0% 0% no-repeat padding-box;
+
   border-radius: 0;
 }
 .no-question-presenter {
   background-color: rgb(255, 187, 0, 0.9);
   width: 34vw;
-  height: 80vh;
+  height: 95vh;
 }
 @media screen and (max-width: 1500px) {
   .no-question-presenter {
