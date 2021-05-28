@@ -3,7 +3,7 @@
   margin: 40px 2%;
 }
 .new-project-card {
-  width: 30%;
+  width: 32%;
   padding: 20px 3%;
   background-color: white;
   border-radius: 15px;
@@ -13,7 +13,7 @@ label {
   margin: 10px;
   margin-left: 0;
 }
-.input {
+.project-input {
   background-color: #f7f7f7;
   border: none;
   width: 100%;
