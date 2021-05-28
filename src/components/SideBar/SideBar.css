@@ -20,3 +20,9 @@
 .tool {
   font-size: 12px;
 }
+.menu p {
+  margin: 30px 5px;
+}
+.menu div {
+  margin-bottom: 20px;
+}

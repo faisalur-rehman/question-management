@@ -16,6 +16,17 @@ const SideBar = () => {
           <p className="tool">Question Management Tool</p>
         </div>
       </div>
+      <div className="menu">
+        <p>Menu</p>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <i class="fas fa-bolt"></i>
+          <h3 style={{ marginLeft: "25px" }}>Projects</h3>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <i class="fal fa-analytics"></i>
+          <h3 style={{ marginLeft: "15px" }}>Analytics</h3>
+        </div>
+      </div>
     </div>
   );
 };
