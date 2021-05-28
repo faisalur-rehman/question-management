@@ -17,7 +17,10 @@ const DarkArchived = ({ text }) => {
           Remarks
         </button>
       </div>
-      <div className="archeived-quesiton-panel dark">
+      <div
+        className="archeived-quesiton-panel dark"
+        style={{ minHeight: "88vh" }}
+      >
         <DarkArchivedCard text={text} />
         <DarkArchivedCard text={text} />
         <DarkArchivedCard text={text} />
