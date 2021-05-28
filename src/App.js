@@ -157,7 +157,7 @@ function App() {
               <div className="sidebar-header">
                 <LiveQuestions />
                 <LiveRemarks />
-                <div style={{ width: "80%" }}></div>
+                {/* <div style={{ width: "80%" }}></div> */}
               </div>
             </div>
           </Route>
@@ -167,7 +167,7 @@ function App() {
               <div className="sidebar-header">
                 <LiveQuestions />
                 <DarkArchived />
-                <div style={{ width: "80%" }}></div>
+                {/* <div style={{ width: "80%" }}></div> */}
               </div>
             </div>
           </Route>

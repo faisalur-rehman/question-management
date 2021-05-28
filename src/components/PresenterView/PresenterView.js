@@ -5,7 +5,7 @@ import ProjectDuration from "./ProjectDuration";
 const PresenterView = () => {
   return (
     <div style={{ display: "flex", backgroundColor: "black" }}>
-      <div style={{ width: "70%", margin: "20px 10px" }}>
+      <div style={{ width: "67%", margin: "20px 10px", height: "100vh" }}>
         <p style={{ color: "white", marginBottom: 5 }}>Incoming Questions</p>
         <Card />
         <hr color="#707070" />
