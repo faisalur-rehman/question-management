@@ -17,7 +17,7 @@ const DarkArchived = ({ text }) => {
           Remarks
         </button>
       </div>
-      <div className="archeived-quesiton-panel">
+      <div className="archeived-quesiton-panel dark">
         <DarkArchivedCard text={text} />
         <DarkArchivedCard text={text} />
         <DarkArchivedCard text={text} />
