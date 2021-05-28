@@ -4,6 +4,7 @@
   justify-content: space-between;
   border-radius: 5px;
   padding: 8px;
+  width: 500px;
 }
 .live-header button {
   /* color: white; */
@@ -18,4 +19,7 @@
   width: 450px;
   height: 90vh;
   background-color: #479edb;
+}
+.moderator-panel {
+  width: 500px;
 }

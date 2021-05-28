@@ -31,7 +31,7 @@ const LiveRemarks = ({ noRemarks }) => {
           Remarks
         </button>
       </div>
-      <div className="archeived-quesiton-panel remark-panel">
+      <div className="remark-panel">
         {!noRemarks ? (
           <>
             <LiveRemarkCard />

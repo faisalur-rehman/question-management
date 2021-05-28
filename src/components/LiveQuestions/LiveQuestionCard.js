@@ -3,7 +3,10 @@ import "../../Assets/css/main.css";
 
 const LiveQuestionCard = () => {
   return (
-    <section className="IncomingQuestionCard live-question">
+    <section
+      className="IncomingQuestionCard live-question"
+      style={{ width: "100%" }}
+    >
       <div className="card-header">
         <div>
           <i className="fa fa-ellipsis-v"></i>

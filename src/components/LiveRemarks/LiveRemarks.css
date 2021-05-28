@@ -19,10 +19,11 @@
   padding: 0 5px;
 }
 .live-remark {
-  background-image: linear-gradient(180deg, #71b6bf, #007a8a);
+  background-image: linear-gradient(184deg, #4db4c2, #007a8a);
 }
 .remark-panel {
-  /* background-color: #007a8a; */
+  background-color: #007a8a;
+  height: 87vh;
 }
 .color {
   background-color: #007a8a;

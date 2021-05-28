@@ -5,13 +5,10 @@ import LiveQuestionCard from "./LiveQuestionCard";
 
 const LiveQuestions = ({ noQuestions }) => {
   return (
-    <div style={{ marginLeft: 10, maxHeight: "100vh", overflow: "scroll" }}>
+    <div style={{ marginLeft: 10 }}>
       <h2 className="incoming">Live Questions</h2>
       <div className="live-header">
-        <div className="">
-          {/* <i className="far fa-check-circle tick"></i>
-          <span>Back to live</span> */}
-        </div>
+        <div className=""></div>
         <button
           className="IncomingQuestionCard-btn1"
           style={{ backgroundColor: "white" }}
@@ -20,7 +17,10 @@ const LiveQuestions = ({ noQuestions }) => {
           Moderator
         </button>
       </div>
-      <div className="archeived-quesiton-panel" style={{ maxHeight: "50vh" }}>
+      <div
+        className="moderator-panel"
+        style={{ height: "87vh", overflow: "scroll" }}
+      >
         {!noQuestions ? (
           <>
             <LiveQuestionCard />
