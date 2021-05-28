@@ -56,14 +56,15 @@
   background: transparent linear-gradient(180deg, #005684 0%, #59b1f1 100%) 0%
     0% no-repeat padding-box !important;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
 }
 .setting-presenter .copy {
   background: transparent linear-gradient(180deg, #ffbb00 0%, #fff574 100%) 0%
     0% no-repeat;
   padding: 0 !important;
-  border-radius: 25px;
+  border-radius: 50%;
 }
 
 .setting-moderator .copy {
@@ -75,9 +76,11 @@
   background-color: red;
   border-radius: 50%;
   color: white;
-  padding: 5px;
-  padding-bottom: 1px;
-  font-size: 1.3rem;
+  padding: 2px;
+  font-size: 1rem;
+  padding-top: 2px;
+  padding-bottom: -5px !important;
+  padding-bottom: 0;
 }
 .presenter {
   background: transparent linear-gradient(180deg, #ffbb00 0%, #fff574 100%) 0%

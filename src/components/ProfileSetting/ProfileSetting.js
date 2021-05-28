@@ -37,7 +37,7 @@ const ProfileSetting = () => {
               className="setting-icon"
               style={{ verticalAlign: "middle", marginRight: 10 }}
             >
-              <AiOutlineSetting />
+              <AiOutlineSetting style={{ padding: 0 }} />
             </span>
             Admin
           </h3>
@@ -94,6 +94,9 @@ const ProfileSetting = () => {
               <p></p>21:30
             </div>
           </div>
+          <div>
+            <button className="text-size active">Edit Settings</button>
+          </div>
         </div>
         <div className="option-card">
           <h2>Options</h2>
@@ -127,15 +130,15 @@ const ProfileSetting = () => {
               <p>Presenter can mark queestions as completed</p>
               <SwitchComponent />
             </div>
-            <div className="option-switch" style={{ marginTop: 10 }}>
+            {/* <div className="option-switch" style={{ marginTop: 10 }}>
               <p>Text Size</p>
               <div>
                 <button className="text-size ">Small</button>
                 <button className="text-size active">Medium</button>
                 <button className="text-size">Large</button>
               </div>
-              {/* <SwitchComponent /> */}
-            </div>
+              <SwitchComponent />
+            </div> */}
           </div>
           <div style={{ marginTop: 20 }}>
             <h4>Moderator View</h4>
