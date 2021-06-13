@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../Assets/css/main.css";
+import archive_icon from "../../Assets/archive_icon.svg";
 
 const LiveQuestionCard = () => {
+  const [clicked, setClicked] = useState(false);
+  let show = !clicked ? "menu-icon-none" : "";
   return (
     <section
       className="IncomingQuestionCard live-question"
@@ -9,7 +12,21 @@ const LiveQuestionCard = () => {
     >
       <div className="card-header">
         <div>
-          <i className="fa fa-ellipsis-v"></i>
+          <i
+            className="fa fa-ellipsis-v"
+            onClick={() => setClicked(!clicked)}
+            style={{ cursor: "pointer" }}
+          ></i>
+          <img
+            src={archive_icon}
+            alt=""
+            style={{
+              verticalAlign: "middle",
+              marginLeft: 5,
+              cursor: "pointer",
+            }}
+            className={`${show}`}
+          />
         </div>
         <div>
           <p style={{ textAlign: "center" }}>2:00</p>

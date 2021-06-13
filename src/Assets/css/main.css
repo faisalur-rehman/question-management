@@ -327,3 +327,16 @@ label {
 .card-body p {
   font-size: 0.8rem;
 }
+.menu-icon {
+  background-color: red;
+  padding: 3px 5px 5px 5px;
+  border-radius: 8px;
+  margin-left: 4px;
+}
+.menu-icon i {
+  color: white;
+  font-size: 0.8rem;
+}
+.menu-icon-none {
+  display: none;
+}
