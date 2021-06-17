@@ -25,7 +25,7 @@ const NewProject = () => {
           <p className="link">https://medquest.com(viewtype)</p>
           <label>Date</label>
           <br />
-          <Input name="title" className="form-control project-input date" />
+          <input name="title" className="form-control project-input date" />
           <MdDateRange className="date-icon" />
           <div className="time-details">
             <div>
