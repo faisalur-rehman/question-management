@@ -35,7 +35,7 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/screen2">
+          <Route path="/projects">
             <div className="sidebar-header body">
               <SideBar />
               <Projects />
@@ -47,7 +47,7 @@ function App() {
               <ProfileSetting />
             </div>
           </Route>
-          <Route path="/screen5">
+          <Route path="/create-project">
             <div className="sidebar-header body">
               <SideBar />
               <NewProject />

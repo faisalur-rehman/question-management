@@ -1,11 +1,19 @@
-import React from "react";
-import Header from "../Header/Header";
 import { Input } from "reactstrap";
-import "./NewProject.css";
 import { MdDateRange } from "react-icons/md";
 import { BiTimeFive } from "react-icons/bi";
 
+import Header from "../Header/Header";
+import "./NewProject.css";
+import * as projectApi from "../../apis/project";
+import useApi from "../../hooks/useApi";
+
 const NewProject = () => {
+  const project = useApi(projectApi.createProject);
+
+  const handleCreateProject = async () => {
+    project.request({});
+  };
+
   return (
     <div style={{ width: "90%" }}>
       <div className="new-project">
@@ -38,7 +46,11 @@ const NewProject = () => {
           <Input name="passcode" className="form-control project-input" />
         </div>
         <div style={{ width: "35%" }}>
-          <button color="primary" className="save-btn text-size active">
+          <button
+            color="primary"
+            className="save-btn text-size active"
+            onClick={handleCreateProject}
+          >
             Save
           </button>
         </div>
