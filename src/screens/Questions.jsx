@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Field } from "formik";
 
 import DashboardHeader from "../components/DasboardHeader/DashboardHeader";
@@ -8,7 +9,7 @@ import IncomingQuestion from "../components/IncomingQuestion/IncomingQuestion";
 import LiveQuestions from "../components/LiveQuestions/LiveQuestions";
 import AppForm from "../common/AppForm";
 import { createQuestionSchema } from "../utils/validations";
-import { useState } from "react";
+import { socket } from "../apis/socket-connect";
 
 export default function QuestionsScreen() {
   return (
@@ -63,10 +64,22 @@ export default function QuestionsScreen() {
 function CreateQuestion() {
   const [questionSelected, setQuestionSelected] = useState();
 
+  useEffect(() => {
+    socket.on("exception", (errors) => {
+      console.log("socket errors", errors);
+    });
+  }, []);
+
   const handleSubmit = ({ formValues }) => {
     console.log("questionSelected", questionSelected);
 
-    console.log("form values", formValues);
+    const project = "60cbe95e130a2e1045a84d55";
+    const formFields = { ...formValues, project };
+
+    socket.emit("create-incoming-question", { ...formFields }, (data) => {
+      console.log("socket incoming question", data);
+    });
+    // console.log("form values", formFields);
   };
 
   return (
