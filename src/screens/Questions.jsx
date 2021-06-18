@@ -8,6 +8,7 @@ import IncomingQuestion from "../components/IncomingQuestion/IncomingQuestion";
 import LiveQuestions from "../components/LiveQuestions/LiveQuestions";
 import AppForm from "../common/AppForm";
 import { createQuestionSchema } from "../utils/validations";
+import { useState } from "react";
 
 export default function QuestionsScreen() {
   return (
@@ -60,7 +61,11 @@ export default function QuestionsScreen() {
 }
 
 function CreateQuestion() {
+  const [questionSelected, setQuestionSelected] = useState();
+
   const handleSubmit = ({ formValues }) => {
+    console.log("questionSelected", questionSelected);
+
     console.log("form values", formValues);
   };
 
@@ -88,17 +93,28 @@ function CreateQuestion() {
               </div>
               <div className="btn-group">
                 <div className="left-btn">
-                  <button type="submit" onClick={() => console.log("save")}>
+                  <button
+                    type="submit"
+                    onClick={() => setQuestionSelected("save")}
+                  >
                     <i className="fa fa-save"></i>
                     Save
                   </button>
                 </div>
                 <div className="right-btn">
-                  <button className="right-btn1">
+                  <button
+                    className="right-btn1"
+                    type="submit"
+                    onClick={() => setQuestionSelected("moderator")}
+                  >
                     <i className="fa fa-check-double"></i>
                     Moderator
                   </button>
-                  <button className="right-btn2">
+                  <button
+                    className="right-btn2"
+                    type="submit"
+                    onClick={() => setQuestionSelected("presenter")}
+                  >
                     <i className="fa fa-user-circle"></i>
                     Presenter
                   </button>
