@@ -13,7 +13,7 @@ export default function useApi(apiFunc) {
     try {
       const res = await apiFunc(...params);
       setIsLoading(false);
-      setData(res);
+      setData(res.data);
       setError({});
       nProgress.done();
       console.log(res);

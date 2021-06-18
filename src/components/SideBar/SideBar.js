@@ -1,7 +1,14 @@
 import React from "react";
 import "./SideBar.css";
 import message from "../../Assets/message.png";
+import { useHistory } from "react-router-dom";
 const SideBar = () => {
+  const history = useHistory();
+
+  const navigateToAllProjects = () => {
+    history.push("/projects");
+  };
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -20,7 +27,13 @@ const SideBar = () => {
         <p>Menu</p>
         <div style={{ display: "flex", alignItems: "center" }}>
           <i class="fas fa-bolt"></i>
-          <h3 style={{ marginLeft: "25px" }}>Projects</h3>
+          <h3
+            style={{ marginLeft: "25px" }}
+            className="cursor"
+            onClick={navigateToAllProjects}
+          >
+            Projects
+          </h3>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <i class="fal fa-analytics"></i>

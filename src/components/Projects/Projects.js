@@ -1,9 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
+
 import "./Projects.css";
 import "../Header/Header.css";
 import ProjectName from "./ProjectName";
 import Header from "../Header/Header";
-import { useHistory } from "react-router-dom";
+import * as projectApi from "../../apis/project";
+import useApi from "../../hooks/useApi";
+import AppLoading from "../../common/AppLoading";
 // import Projects from "../Projects/Projects";
 
 const Projects = () => {
@@ -24,15 +29,33 @@ const Projects = () => {
         </div>
       </div>
 
-      <ProjectName />
-      <ProjectName />
-      <ProjectName />
-      <ProjectName />
-      <ProjectName />
-      <ProjectName />
-      <ProjectName />
+      <ListAllProjects />
     </div>
   );
 };
 
 export default Projects;
+
+function ListAllProjects() {
+  const {
+    request,
+    isLoading,
+    data: projects,
+  } = useApi(projectApi.fetchAllProjects);
+
+  useEffect(() => {
+    request();
+  }, []);
+
+  if (isLoading || !projects) {
+    return <AppLoading />;
+  }
+
+  return (
+    <>
+      {projects.map((project) => (
+        <ProjectName key={project._id} />
+      ))}
+    </>
+  );
+}

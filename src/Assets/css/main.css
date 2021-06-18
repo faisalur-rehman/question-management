@@ -340,3 +340,7 @@ label {
 .menu-icon-none {
   display: none;
 }
+
+.cursor {
+  cursor: pointer;
+}
