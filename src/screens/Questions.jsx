@@ -1,50 +1,19 @@
+import { Field } from "formik";
+
 import DashboardHeader from "../components/DasboardHeader/DashboardHeader";
 import TransitionsModal from "../components/Modal/Modal";
 import SavedRemarks from "../components/SavedRemarks/SavedRemarks";
 import Questions from "../components/Questions/Questions";
 import IncomingQuestion from "../components/IncomingQuestion/IncomingQuestion";
 import LiveQuestions from "../components/LiveQuestions/LiveQuestions";
+import AppForm from "../common/AppForm";
+import { createQuestionSchema } from "../utils/validations";
 
 export default function QuestionsScreen() {
   return (
     <div className="body">
       <DashboardHeader />
-      <TransitionsModal
-        modalType="Add Question"
-        modal={
-          <section className="question">
-            <h2>Question</h2>
-            <form action="" className="form">
-              <div className="form-group">
-                <label for="pasteName">Paste Name</label>
-                <input type="text" name="pasteName" />
-              </div>
-              <div className="form-group">
-                <label for="pasteQuestion">Paste Question</label>
-                <textarea name="pasteQuestion" id="pasteQuestion"></textarea>
-              </div>
-              <div className="btn-group">
-                <div className="left-btn">
-                  <button>
-                    <i className="fa fa-save"></i>
-                    Save
-                  </button>
-                </div>
-                <div className="right-btn">
-                  <button className="right-btn1">
-                    <i className="fa fa-check-double"></i>
-                    Moderator
-                  </button>
-                  <button className="right-btn2">
-                    <i className="fa fa-user-circle"></i>
-                    Presenter
-                  </button>
-                </div>
-              </div>
-            </form>
-          </section>
-        }
-      />
+      <CreateQuestion />
       <TransitionsModal
         modalType="Add Remarks"
         modal={
@@ -89,3 +58,61 @@ export default function QuestionsScreen() {
     </div>
   );
 }
+
+function CreateQuestion() {
+  const handleSubmit = ({ formValues }) => {
+    console.log("form values", formValues);
+  };
+
+  return (
+    <TransitionsModal
+      modalType="Add Question"
+      modal={
+        <section className="question">
+          <h2>Question</h2>
+          <AppForm
+            initialValues={questionInitialValue}
+            validationSchema={createQuestionSchema}
+            handleSubmit={handleSubmit}
+          >
+            <div className="form">
+              <div className="form-group">
+                <label for="pasteName">Paste Name</label>
+                {/* <input type="text" name="name" /> */}
+                <Field type="text" name="name" />
+              </div>
+              <div className="form-group">
+                <label for="pasteQuestion">Paste Question</label>
+                {/* <textarea name="pasteQuestion" id="pasteQuestion"></textarea> */}
+                <Field as="textarea" name="questionText" />
+              </div>
+              <div className="btn-group">
+                <div className="left-btn">
+                  <button type="submit" onClick={() => console.log("save")}>
+                    <i className="fa fa-save"></i>
+                    Save
+                  </button>
+                </div>
+                <div className="right-btn">
+                  <button className="right-btn1">
+                    <i className="fa fa-check-double"></i>
+                    Moderator
+                  </button>
+                  <button className="right-btn2">
+                    <i className="fa fa-user-circle"></i>
+                    Presenter
+                  </button>
+                </div>
+              </div>
+            </div>
+          </AppForm>
+        </section>
+      }
+    />
+  );
+}
+
+const questionInitialValue = {
+  name: "",
+  questionText: "",
+};

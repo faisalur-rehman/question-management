@@ -6,3 +6,8 @@ export const projectSchema = yup.object({
   startTime: yup.string().required(),
   endTime: yup.string().required(),
 });
+
+export const createQuestionSchema = yup.object({
+  name: yup.string().min(5).required(),
+  questionText: yup.string().min(5).required(),
+});
