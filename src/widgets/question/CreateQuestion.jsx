@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Field } from "formik";
 
 import AppForm from "../../common/AppForm";
@@ -10,12 +10,6 @@ import useSocketError from "../../hooks/useSocketError";
 export default function CreateQuestion() {
   useSocketError();
   const [questionSelected, setQuestionSelected] = useState();
-
-  useEffect(() => {
-    socket.on("new-incoming-question", (question) => {
-      console.log("incoming question from server", question);
-    });
-  }, []);
 
   const handleSubmit = ({ formValues }) => {
     const project = "60cbe95e130a2e1045a84d55";
