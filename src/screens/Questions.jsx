@@ -79,17 +79,16 @@ function CreateQuestion() {
     const url = getURLForCreatingQuestions();
     console.log("url", url);
 
-    // socket.emit("create-incoming-question", { ...formFields }, (data) => {
-    //   console.log("socket incoming question", data);
-    // });
-    // console.log("form values", formFields);
+    socket.emit(url, { ...formFields }, (data) => {
+      console.log("socket incoming question", data);
+    });
   };
 
   const getURLForCreatingQuestions = () => {
     let url = "create-incoming-question";
 
     if (questionSelected === "moderator") {
-      url = " create-moderator-question";
+      url = "create-moderator-question";
     } else if (questionSelected === "presenter") {
       url = "create-presenter-question";
     }
