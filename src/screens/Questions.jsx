@@ -76,10 +76,25 @@ function CreateQuestion() {
     const project = "60cbe95e130a2e1045a84d55";
     const formFields = { ...formValues, project };
 
-    socket.emit("create-incoming-question", { ...formFields }, (data) => {
-      console.log("socket incoming question", data);
-    });
+    const url = getURLForCreatingQuestions();
+    console.log("url", url);
+
+    // socket.emit("create-incoming-question", { ...formFields }, (data) => {
+    //   console.log("socket incoming question", data);
+    // });
     // console.log("form values", formFields);
+  };
+
+  const getURLForCreatingQuestions = () => {
+    let url = "create-incoming-question";
+
+    if (questionSelected === "moderator") {
+      url = " create-moderator-question";
+    } else if (questionSelected === "presenter") {
+      url = "create-presenter-question";
+    }
+
+    return url;
   };
 
   return (
