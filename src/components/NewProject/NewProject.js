@@ -9,13 +9,17 @@ import * as projectApi from "../../apis/project";
 import useApi from "../../hooks/useApi";
 import AppForm from "../../common/AppForm";
 import { projectSchema } from "../../utils/validations";
+import { useHistory } from "react-router-dom";
 
 const NewProject = () => {
+  const history = useHistory();
   const project = useApi(projectApi.createProject);
 
   const handleCreateProject = async ({ formValues }) => {
-    console.log(formValues);
-    // project.request({});
+    try {
+      await project.request({ ...formValues });
+      history.push("/projects");
+    } catch (_) {}
   };
 
   return (
