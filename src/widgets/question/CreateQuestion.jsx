@@ -5,13 +5,15 @@ import AppForm from "../../common/AppForm";
 import { socket } from "../../apis/socket-connect";
 import TransitionsModal from "../../components/Modal/Modal";
 import { createQuestionSchema } from "../../utils/validations";
+import useSocketError from "../../hooks/useSocketError";
 
 export default function CreateQuestion() {
+  useSocketError();
   const [questionSelected, setQuestionSelected] = useState();
 
   useEffect(() => {
-    socket.on("exception", (errors) => {
-      console.log("socket errors", errors);
+    socket.on("new-incoming-question", (question) => {
+      console.log("incoming question from server", question);
     });
   }, []);
 
