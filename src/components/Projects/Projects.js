@@ -45,6 +45,7 @@ function ListAllProjects() {
 
   useEffect(() => {
     request();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading || !projects) {
@@ -54,7 +55,7 @@ function ListAllProjects() {
   return (
     <>
       {projects.map((project) => (
-        <ProjectName key={project._id} />
+        <ProjectName key={project._id} project={project} />
       ))}
     </>
   );

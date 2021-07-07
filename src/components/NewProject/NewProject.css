@@ -29,7 +29,7 @@ label {
   width: 70%;
 }
 .time {
-  width: 70%;
+  padding: 10px;
 }
 .date-icon,
 .time-icon {

@@ -1,12 +1,13 @@
 import React from "react";
 import "./Projects.css";
 
-const ProjectName = () => {
+const ProjectName = (props) => {
+  console.log("projects", props.project.scheduleDate);
   return (
     <div className="project-name">
-      <p>Name of project</p>
+      <p>{props.project.title}</p>
       <div className="project-details">
-        <p>14 august 2021</p>
+        <p>{props.project.scheduleDate}</p>
         <button>Project Details</button>
       </div>
     </div>

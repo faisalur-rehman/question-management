@@ -19,14 +19,26 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import PresenterView from "./components/PresenterView/PresenterView";
 import AlarmScreen from "./components/AlarmScreen/AlarmScreen";
-import TransitionsModal from "./components/Modal/Modal";
+import Register from "./components/auth/Register";
+// import TransitionsModal from "./components/Modal/Modal";
 import QuestionsScreen from "./screens/Questions";
+// import Login from "./components/auth/Login";
+import SuperUser from "./components/auth/SuperUser";
 
 function App() {
   return (
     <Router>
       <Switch>
         <div className="App">
+          <Route path="/create-superuser">
+            <SuperUser />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
           <Route exact path="/">
             <div className="body">
               <DashboardHeader />

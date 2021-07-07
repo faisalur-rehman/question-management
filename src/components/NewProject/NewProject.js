@@ -1,6 +1,6 @@
 // import { Input } from "reactstrap";
 import { MdDateRange } from "react-icons/md";
-import { BiTimeFive } from "react-icons/bi";
+// import { BiTimeFive } from "react-icons/bi";
 import { Field } from "formik";
 
 import Header from "../Header/Header";
@@ -73,7 +73,7 @@ function NewProjectForm({ onSubmit }) {
                 name="startTime"
                 className="form-control project-input time"
               />
-              <BiTimeFive className="time-icon" />
+              {/* <BiTimeFive className="time-icon" /> */}
             </div>
             <div>
               <label>End Time</label>
@@ -83,7 +83,7 @@ function NewProjectForm({ onSubmit }) {
                 name="endTime"
                 className="form-control project-input time"
               />
-              <BiTimeFive className="time-icon" />
+              {/* <BiTimeFive className="time-icon" /> */}
             </div>
           </div>
         </div>

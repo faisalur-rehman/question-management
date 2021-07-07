@@ -1,16 +1,24 @@
 import React, { useState } from "react";
-import image from "./images/pexels-eduardo-dutra-2115217.jpg";
-import logo from "./images/Group 1033.svg";
-import "./css/Login.css";
-import { useHistory } from "react-router";
+import image from "../Login/images/pexels-eduardo-dutra-2115217.jpg";
+import logo from "../Login/images/Group 1033.svg";
+import "../Login/css/Login.css";
 import useApi from "../../hooks/useApi";
 import * as projectApi from "../../apis/project";
+import { useHistory } from "react-router";
 
-const Login = () => {
+const Register = () => {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
 
+  function handleName({ target }) {
+    setName(target.value);
+  }
+  function handleRole({ target }) {
+    setRole(target.value);
+  }
   function handleEmail({ target }) {
     setEmail(target.value);
   }
@@ -18,20 +26,16 @@ const Login = () => {
     setPassword(target.value);
   }
 
-  const login = useApi(projectApi.login);
+  const auth = useApi(projectApi.register);
   async function handleSubmit(e) {
+    console.log(email, password, role, name);
     e.preventDefault();
     try {
-      const { data } = await login.request({ email, password });
-      if (data.role === "superuser") {
-        localStorage.setItem("super-user-token", data.token);
-        history.push("/register");
-      } else {
-        localStorage.setItem("token", data.token);
-        history.push("/projects");
-      }
+      await auth.request({ email, password, role, name });
+      history.push("/login");
     } catch (_) {}
   }
+
   return (
     <div className="container-login loginn">
       <div className="wrap-login">
@@ -46,7 +50,17 @@ const Login = () => {
           </span>
           <div className="login-from-inner">
             <div className="wrap-input">
-              <label for="email">Email</label>
+              <label>Name</label>
+              <input
+                className="input"
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleName}
+              />
+            </div>
+            <div className="wrap-input">
+              <label>Email</label>
               <input
                 className="input"
                 type="email"
@@ -56,7 +70,7 @@ const Login = () => {
               />
             </div>
             <div className="wrap-input">
-              <label for="password">Password</label>
+              <label>Password</label>
               <input
                 className="input"
                 type="password"
@@ -65,9 +79,17 @@ const Login = () => {
                 onChange={handlePassword}
               />
             </div>
-
+            <div className="wrap-input">
+              <label>Role</label>
+              <input
+                className="input"
+                type="text"
+                value={role}
+                onChange={handleRole}
+              />
+            </div>
             <div className="login-form-btn">
-              <button className="login-btn">Login</button>
+              <button className="login-btn">Register</button>
             </div>
           </div>
         </form>
@@ -76,4 +98,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
