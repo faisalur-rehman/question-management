@@ -26,3 +26,33 @@ export function register(data) {
 export function login(data) {
   return api.post("/auth/login", { ...data });
 }
+export function presenterPermissions() {
+  return api.get("/presenter-permission");
+}
+
+export function setPresenterPermissions(data) {
+  return api.post(
+    "/presenter-permission",
+    { ...data },
+    {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("super-user-token")}`,
+      },
+    }
+  );
+}
+export function moderatorPermissions() {
+  return api.get("/moderator-permission");
+}
+
+export function setModeratorPermissions(data) {
+  return api.post(
+    "/moderator-permission",
+    { ...data },
+    {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("super-user-token")}`,
+      },
+    }
+  );
+}

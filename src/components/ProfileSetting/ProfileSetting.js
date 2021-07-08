@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ProfileSetting.css";
 import copy from "../../Assets/copy.png";
 import { AiOutlineSetting } from "react-icons/ai";
@@ -7,8 +7,52 @@ import { RiFileCopyLine } from "react-icons/ri";
 import moderator from "../../Assets/moderator.png";
 import SwitchComponent from "../Switch/Switch";
 import Header from "../Header/Header";
+import useApi from "../../hooks/useApi";
+import * as projectApi from "../../apis/project";
 
 const ProfileSetting = () => {
+  const [nameVisible, setNameVisible] = useState(false);
+  const [isStartTimeVisible, setIsStartTimeVisible] = useState(false);
+  const [isTimeVisible, setIsTimeVisible] = useState(false);
+  const [isRunningTimeVisible, setIsRunningTimeVisible] = useState(false);
+  const [isTimeLeftVisible, setIsTimeLeftVisible] = useState(false);
+  const [isRemarksVisible, setIsRemarksVisible] = useState(false);
+  const [presenterMarkQuestion, setPresenterMarkQuestion] = useState(false);
+  const [isViewEnable, setIsViewEnable] = useState(false);
+  const [canPlaceRemarks, setCanPlaceRemarks] = useState(false);
+  const [canEditRemarks, setCanEditRemarks] = useState(false);
+  const [canEditQuestions, setCanEditQuestions] = useState(false);
+
+  const presenterPermissions = useApi(projectApi.presenterPermissions);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data } = await presenterPermissions.request();
+        console.log("presenter", data);
+        setIsRemarksVisible(data.isRemarksVisible);
+        setIsRunningTimeVisible(data.isRunningTimeVisible);
+        setIsStartTimeVisible(data.isStartTimeVisible);
+        setIsTimeLeftVisible(data.isTimeLeftVisible);
+        setIsTimeVisible(data.isTimeVisible);
+      } catch (_) {}
+    }
+    fetchData();
+  }, []);
+  const moderatorPermissions = useApi(projectApi.moderatorPermissions);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data } = await moderatorPermissions.request();
+        console.log("moderator", data);
+        setCanEditQuestions(data.canEditQuestions);
+        setCanEditRemarks(data.canEditRemarks);
+        setCanPlaceRemarks(data.canPlaceRemarks);
+        setIsViewEnable(data.isViewEnable);
+      } catch (_) {}
+    }
+    fetchData();
+  }, []);
+
   return (
     <div style={{ width: "100%" }}>
       <div
@@ -76,7 +120,12 @@ const ProfileSetting = () => {
           <p>Presenter View</p>
           <div className="moderator-switch">
             <p>Moderator View </p>
-            <SwitchComponent />
+            <SwitchComponent
+              property="isViewEnable"
+              state={isViewEnable}
+              setState={setIsViewEnable}
+              role="moderator"
+            />
           </div>
           <h3>Date and Time</h3>
           <div className="date-time">
@@ -104,62 +153,103 @@ const ProfileSetting = () => {
             <h4>Presenter View</h4>
             <div className="option-switch">
               <p>Name Visible </p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="nameVisible"
+                state={nameVisible}
+                setState={setNameVisible}
+                role="presenter"
+              />
             </div>
             <div className="option-switch">
               <p>Start Time</p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="isStartTimeVisible"
+                state={isStartTimeVisible}
+                setState={setIsStartTimeVisible}
+                role="presenter"
+              />
             </div>
             <div className="option-switch">
               <p>Time Visible</p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="isTimeVisible"
+                state={isTimeVisible}
+                setState={setIsTimeVisible}
+                role="presenter"
+              />
             </div>
             <div className="option-switch">
               <p>Running Time </p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="isRunningTimeVisible"
+                state={isRunningTimeVisible}
+                setState={setIsRunningTimeVisible}
+                role="presenter"
+              />
             </div>
             <div className="option-switch">
               <p>Time Left</p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="isTimeLeftVisible"
+                state={isTimeLeftVisible}
+                setState={setIsTimeLeftVisible}
+                role="presenter"
+              />
             </div>
             <div className="option-switch">
               <p>Remarks Visible</p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="isRemarksVisible"
+                state={isRemarksVisible}
+                setState={setIsRemarksVisible}
+                role="presenter"
+              />
             </div>
             <div className="option-switch">
               <p>Presenter can mark queestions as completed</p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="presenterMarkQuestion"
+                state={presenterMarkQuestion}
+                setState={setPresenterMarkQuestion}
+                role="presenter"
+              />
             </div>
-            {/* <div className="option-switch" style={{ marginTop: 10 }}>
-              <p>Text Size</p>
-              <div>
-                <button className="text-size ">Small</button>
-                <button className="text-size active">Medium</button>
-                <button className="text-size">Large</button>
-              </div>
-              <SwitchComponent />
-            </div> */}
           </div>
           <div style={{ marginTop: 20 }}>
             <h4>Moderator View</h4>
             <div className="option-switch">
               <p>Moderator can place remarks </p>
-              <SwitchComponent disabled />
+              <SwitchComponent
+                property="canPlaceRemarks"
+                state={canPlaceRemarks}
+                setState={setCanPlaceRemarks}
+                role="moderator"
+              />
             </div>
             <div className="option-switch">
               <p>Moderator can edit remarks </p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="canEditRemarks"
+                state={canEditRemarks}
+                setState={setCanEditRemarks}
+                role="moderator"
+              />
             </div>
             <div className="option-switch">
               <p>Moderator can edit questions </p>
-              <SwitchComponent />
+              <SwitchComponent
+                property="canEditQuestions"
+                state={canEditQuestions}
+                setState={setCanEditQuestions}
+                role="moderator"
+              />
             </div>
           </div>
           <div style={{ marginTop: 20 }}>
             <h4>Advanced Options</h4>
             <div className="option-switch">
               <p>Custom text</p>
-              <SwitchComponent />
+              {/* <SwitchComponent /> */}
             </div>
           </div>
         </div>

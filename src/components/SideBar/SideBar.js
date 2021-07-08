@@ -2,6 +2,7 @@ import React from "react";
 import "./SideBar.css";
 import message from "../../Assets/message.png";
 import { useHistory } from "react-router-dom";
+
 const SideBar = () => {
   const history = useHistory();
 
@@ -26,7 +27,7 @@ const SideBar = () => {
       <div className="menu">
         <p>Menu</p>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <i class="fas fa-bolt"></i>
+          <i className="fas fa-bolt"></i>
           <h3
             style={{ marginLeft: "25px" }}
             className="cursor"
@@ -36,7 +37,7 @@ const SideBar = () => {
           </h3>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <i class="fal fa-analytics"></i>
+          <i className="fal fa-analytics"></i>
           <h3 style={{ marginLeft: "15px" }}>Analytics</h3>
         </div>
       </div>

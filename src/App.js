@@ -5,7 +5,7 @@ import DashboardHeader from "./components/DasboardHeader/DashboardHeader";
 import IncomingQuestion from "./components/IncomingQuestion/IncomingQuestion";
 import LiveQuestions from "./components/LiveQuestions/LiveQuestions";
 import NewProject from "./components/NewProject/NewProject";
-import ProfileSetting from "./components/ProfileSetting/ProfileSetting";
+// import ProfileSetting from "./components/ProfileSetting/ProfileSetting";
 import Projects from "./components/Projects/Projects";
 import Questions from "./components/Questions/Questions";
 import SavedRemarks from "./components/SavedRemarks/SavedRemarks";
@@ -24,6 +24,7 @@ import Register from "./components/auth/Register";
 import QuestionsScreen from "./screens/Questions";
 // import Login from "./components/auth/Login";
 import SuperUser from "./components/auth/SuperUser";
+import ProjectSetting from "./components/ProjectSetting/ProjectSetting";
 
 function App() {
   return (
@@ -55,10 +56,7 @@ function App() {
             </div>
           </Route>
           <Route path="/permissions">
-            <div className="sidebar-header body">
-              <SideBar />
-              <ProfileSetting />
-            </div>
+            <ProjectSetting />
           </Route>
           <Route path="/create-project">
             <div className="sidebar-header body">

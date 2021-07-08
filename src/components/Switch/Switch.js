@@ -1,54 +1,39 @@
-// import React, { useState } from "react";
-// import { Switch } from "antd";
-// // import "antd/dist/antd.css";
-// import "./Switch.css";
-
-// const SwitchComponent = () => {
-//   const [color, setColor] = useState("green");
-//   function onChange(checked) {
-//     console.log(`switch to ${checked}`);
-//     if (checked) {
-//       setColor("green");
-//     } else {
-//       setColor("lightgray");
-//     }
-//   }
-//   return (
-//     <div>
-//       <Switch defaultChecked className={`${color}`} onChange={onChange} />
-//     </div>
-//   );
-// };
-
-// export default SwitchComponent;
 import React from "react";
 import Switch from "@material-ui/core/Switch";
+import useApi from "../../hooks/useApi";
+import * as projectApi from "../../apis/project";
 
-export default function Switches() {
-  const [color, setColor] = React.useState("green");
-  const [state, setState] = React.useState({
-    checkedA: true,
-    checkedB: true,
-  });
+export default function Switches({ role, property, state, setState }) {
+  // const history = useHistory();
+  const setPresenterPermissions = useApi(projectApi.setPresenterPermissions);
+  const setModeratorPermissions = useApi(projectApi.setModeratorPermissions);
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    if (event.target.checked) {
-      setColor("green");
+  const handleChange = async () => {
+    if (role === "moderator") {
+      try {
+        const data = await setModeratorPermissions.request({
+          [property]: !state,
+        });
+        console.log("moderator", data);
+      } catch (_) {}
     } else {
-      setColor("lightgray");
+      console.log({
+        [property]: !state,
+      });
+      try {
+        const data = await setPresenterPermissions.request({
+          [property]: !state,
+        });
+        console.log("moderator", data);
+      } catch (_) {}
     }
+
+    setState(!state);
   };
 
   return (
     <div>
-      <Switch
-        checked={state.checkedA}
-        onChange={handleChange}
-        name="checkedA"
-        className={`${color}`}
-        // inputProps={{ "aria-label": "success checkbox" }}
-      />
+      <Switch checked={state} onChange={handleChange} name="checkedA" />
     </div>
   );
 }
