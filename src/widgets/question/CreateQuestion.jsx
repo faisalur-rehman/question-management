@@ -12,7 +12,7 @@ export default function CreateQuestion() {
   const [questionSelected, setQuestionSelected] = useState();
 
   const handleSubmit = ({ formValues }) => {
-    const project = "60cbe95e130a2e1045a84d55";
+    const project = "60e53f6ce35eb82ea8585cf5";
     const formFields = { ...formValues, project };
 
     const url = getURLForCreatingQuestions();
@@ -47,13 +47,13 @@ export default function CreateQuestion() {
           >
             <div className="form">
               <div className="form-group">
-                <label for="pasteName">Paste Name</label>
+                <label htmlFor="pasteName">Paste Name</label>
                 {/* <input type="text" name="name" /> */}
                 <Field type="text" name="name" />
               </div>
               <div className="form-group">
-                <label for="pasteQuestion">Paste Question</label>
-                {/* <textarea name="pasteQuestion" id="pasteQuestion"></textarea> */}
+                <label htmlFor="pasteQuestion">Paste Question</label>
+
                 <Field as="textarea" name="questionText" />
               </div>
               <div className="btn-group">
