@@ -34,7 +34,7 @@ export default IncomingQuestion;
 function NoQuestion() {
   return (
     <div className="no-question">
-      <i class="far fa-hourglass"></i>
+      <i className="far fa-hourglass"></i>
     </div>
   );
 }
