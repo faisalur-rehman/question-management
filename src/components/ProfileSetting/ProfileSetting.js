@@ -37,6 +37,7 @@ const ProfileSetting = () => {
       } catch (_) {}
     }
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const moderatorPermissions = useApi(projectApi.moderatorPermissions);
   useEffect(() => {
@@ -51,6 +52,7 @@ const ProfileSetting = () => {
       } catch (_) {}
     }
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

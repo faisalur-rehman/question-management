@@ -1,7 +1,20 @@
 import React from "react";
 import "../../Assets/css/main.css";
+import { socket } from "../../apis/socket-connect";
+const DarkArchivedCard = ({ text, question }) => {
+  function handleQuestion() {
+    socket.emit(
+      "move-archived-question-to-presenter",
+      {
+        questionId: question._id,
+        projectId: "60e53f6ce35eb82ea8585cf5",
+      },
+      (data) => {
+        console.log(data);
+      }
+    );
+  }
 
-const DarkArchivedCard = ({ text }) => {
   return (
     <section className="IncomingQuestionCard dark">
       <div className="card-header">
@@ -11,18 +24,13 @@ const DarkArchivedCard = ({ text }) => {
           {text && <h5>Mathew Perry</h5>}
         </div>
         <div>
-          <button className="reload">
+          <button className="reload" onClick={handleQuestion}>
             <i class="fas fa-redo-alt"></i>
           </button>
         </div>
       </div>
       <div className="card-body">
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum.
-        </p>
+        <p>{question.questionText}</p>
       </div>
     </section>
   );
