@@ -1,24 +1,37 @@
 import React from "react";
+import { socket } from "../../apis/socket-connect";
 import "./PresenterView.css";
 
-const Card = ({ remarks }) => {
+const Card = ({ remarks, question }) => {
+  function handleIncomingQuestion(url) {
+    socket.emit(
+      url,
+      {
+        questionId: question._id,
+        projectId: "60e53f6ce35eb82ea8585cf5",
+      },
+      (data) => {
+        console.log(data);
+      }
+    );
+  }
   return (
     <div>
       <div className="presenter-card">
         <div className="left">
           <p>13:02</p>
           <div>
-            <i className="fas fa-check presenter-tick"></i>
+            <i
+              className="fas fa-check presenter-tick"
+              onClick={() =>
+                handleIncomingQuestion("move-presenter-question-to-archived")
+              }
+            ></i>
           </div>
         </div>
         <div className="right">
-          {!remarks && <h5 className="name">Mathew Perry</h5>}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            quidem beatae sunt repellat sed ex minus, iusto, laboriosam culpa
-            provident exercitationem explicabo quae incidunt eos similique
-            incidunt eos similique incidunt eos similique incidunt eos similique
-          </p>
+          {!remarks && <h5 className="name">{question && question.name}</h5>}
+          <p>{question && question.questionText}</p>
         </div>
       </div>
     </div>
