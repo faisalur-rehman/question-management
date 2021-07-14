@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../../Assets/css/main.css";
-import archive_icon from "../../Assets/archive_icon.svg";
 import { socket } from "../../apis/socket-connect";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -52,13 +51,18 @@ const LiveQuestionCard = ({ question }) => {
             style={{ cursor: "pointer" }}
             onClick={() => setClicked(!clicked)}
           ></i>
-          <img
-            src={archive_icon}
-            alt=""
-            style={{ verticalAlign: "middle", marginLeft: 5 }}
-            className={`${show}`}
-            onClick={() => setEditQuestion(true)}
-          />
+          <i
+            className={`fas fa-edit ${show}`}
+            style={{
+              color: "white",
+              background: "lightgray",
+              padding: 7,
+              borderRadius: 8,
+              paddingRight: 5,
+              fontSize: ".7rem",
+              marginLeft: 5,
+            }}
+          ></i>
           <span className={`${show} menu-icon`}>
             <i
               className="fal fa-minus-circle"
