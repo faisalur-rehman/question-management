@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../../Assets/css/main.css";
 import { socket } from "../../apis/socket-connect";
+import EditQuestionModal from "../Modal/EditQuestionModal";
 
 const IncomingQuestionCard = (props) => {
   const [clicked, setClicked] = useState(false);
+  const [editQuestion, setEditQuestion] = useState(false);
   let show = !clicked ? "menu-icon-none" : "";
 
   function handleIncomingQuestion(url) {
@@ -39,6 +41,7 @@ const IncomingQuestionCard = (props) => {
               fontSize: ".7rem",
               marginLeft: 5,
             }}
+            onClick={() => setEditQuestion(true)}
           ></i>
           <span className={`${show} menu-icon`}>
             <i
@@ -75,6 +78,11 @@ const IncomingQuestionCard = (props) => {
       <div className="card-body">
         <p>{props.question.questionText}</p>
       </div>
+      <EditQuestionModal
+        show={editQuestion}
+        onClose={setEditQuestion}
+        question={props.question}
+      />
     </section>
   );
 };
