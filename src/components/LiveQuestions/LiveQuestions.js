@@ -2,11 +2,22 @@ import React from "react";
 // import "../ArchivedQuestions/ArcheivedPanel.css";
 import "./LiveQuestion.css";
 import LiveQuestionCard from "./LiveQuestionCard";
+import AppLoading from "../../common/AppLoading";
+import useFetchQuestions from "../../hooks/useFetchQuestions";
 
 const LiveQuestions = ({ noQuestions }) => {
+  const { questions, isLoading } = useFetchQuestions(
+    "all-moderator-questions",
+    "new-moderator-question",
+    "updated-moderator-questions"
+  );
+
+  if (isLoading) {
+    return <AppLoading />;
+  }
   return (
     <div style={{ marginLeft: 10 }}>
-      <h2 className="incoming">Live Questions</h2>
+      <h2 className="incoming">Question Moderation</h2>
       <div className="live-header">
         <div className=""></div>
         <button
@@ -21,22 +32,20 @@ const LiveQuestions = ({ noQuestions }) => {
         className="moderator-panel"
         style={{ height: "87vh", overflow: "scroll" }}
       >
-        {!noQuestions ? (
-          <>
-            <LiveQuestionCard />
-            <LiveQuestionCard />
-            <LiveQuestionCard />
-            <LiveQuestionCard />
-            <LiveQuestionCard />
-            <LiveQuestionCard />
-            <LiveQuestionCard />
-          </>
-        ) : (
-          <div className="no-questions-moderator"></div>
-        )}
+        {questions.length === 0 && <NoQuestion />}
+        {questions.map((question) => (
+          <LiveQuestionCard key={question._id} question={question} />
+        ))}
       </div>
     </div>
   );
 };
 
 export default LiveQuestions;
+function NoQuestion() {
+  return (
+    <div className="no-question">
+      <i className="far fa-hourglass"></i>
+    </div>
+  );
+}
