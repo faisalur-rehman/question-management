@@ -3,7 +3,8 @@ import { socket } from "../apis/socket-connect";
 
 export default function useFetchQuestions(
   fetchQuestionURL,
-  onChangeQuestionURL
+  onChangeQuestionURL,
+  updatedURL
 ) {
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,6 +17,13 @@ export default function useFetchQuestions(
         return [..._questions, question];
       });
     });
+
+    socket.on(updatedURL, (question) => {
+      console.log("deleted", question);
+      setQuestions([...question[0].questions]);
+    });
+
+    //eslint-disable-next-line
   }, []);
 
   const fetchQuestions = () => {

@@ -32,13 +32,27 @@ export default function TransitionsModal(props) {
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={handleOpen}
-        style={{ padding: "5px 8px", marginTop: 5 }}
-      >
-        {props.modalType}
-      </button>
+      {props.img ? (
+        <img
+          src={props.src}
+          alt=""
+          style={{
+            marginLeft: 5,
+            marginTop: -5,
+            cursor: "pointer",
+          }}
+          onClick={handleOpen}
+          className={`${props.show}`}
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={handleOpen}
+          style={{ padding: "5px 8px", marginTop: 5 }}
+        >
+          {props.modalType}
+        </button>
+      )}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
