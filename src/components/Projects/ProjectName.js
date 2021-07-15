@@ -7,8 +7,15 @@ const ProjectName = (props) => {
   console.log("project", props);
 
   function handleClick() {
+    const role = localStorage.getItem("role");
+    let URL = "/permissions";
+    if (role === "presenter") {
+      URL = "/screen12";
+    } else if (role === "moderator") {
+      URL = "/screen24";
+    }
     history.push({
-      pathname: `/permissions`,
+      pathname: `${URL}`,
       state: { project: props.project },
     });
   }

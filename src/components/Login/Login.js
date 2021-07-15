@@ -28,6 +28,7 @@ const Login = () => {
         history.push("/register");
       } else {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("role", data.role);
         history.push("/projects");
       }
     } catch (_) {}
