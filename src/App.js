@@ -123,9 +123,8 @@ function App() {
               </div>
             </div>
           </Route>
-          <Route path="/screen12">
-            <PresenterView />
-          </Route>
+          <Route path="/screen12" component={PresenterView} />
+
           <Route path="/screen13">
             <div className="body">
               <DashboardHeader />

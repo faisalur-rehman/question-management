@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../../Assets/message.png";
+import useApi from "../../hooks/useApi";
 import "./DashboardHeader.css";
+import * as projectApi from "../../apis/project";
+import AppLoading from "../../common/AppLoading";
+
 const DashboardHeader = () => {
+  const { request, isLoading, data } = useApi(projectApi.fecthSingleProject);
+
+  useEffect(() => {
+    request(localStorage.getItem("moderator-projectId"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  if (isLoading) {
+    return <AppLoading />;
+  }
   return (
     <section className="dashboard-header">
       <div className="dashboard-header-row">
@@ -13,8 +26,12 @@ const DashboardHeader = () => {
           quest
         </div>
         <div className="dashboard-header-col2">
-          <p id="bold">Friday April, 23</p>
-          <p>Name of Project</p>
+          {data && (
+            <p id="bold">
+              {new Date(data.scheduleDate).toLocaleDateString("en-GB")}
+            </p>
+          )}
+          {data && <p>{data.title}</p>}
         </div>
         <div className="dashboard-header-col3">
           <div className="dashboard-header-col3-icon1">

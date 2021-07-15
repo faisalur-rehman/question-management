@@ -7,7 +7,13 @@ import { socket } from "../../apis/socket-connect";
 import useApi from "../../hooks/useApi";
 import * as projectApi from "../../apis/project";
 
-const PresenterView = () => {
+const PresenterView = (props) => {
+  console.log("props", props.location);
+  !localStorage.getItem("presenter-projectId") &&
+    localStorage.setItem(
+      "presenter-projectId",
+      props.location.state.project._id
+    );
   const [allRemarks, setAllRemarks] = useState([]);
   const [presenterPermissions, setPresenterPermissions] = useState({});
   const permissions = useApi(projectApi.presenterPermissions);

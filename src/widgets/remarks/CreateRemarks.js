@@ -8,7 +8,7 @@ const CreateRemarks = () => {
   const [remarkSelected, setRemarkSelected] = useState();
 
   const handleSubmit = ({ formValues }) => {
-    const projectId = "60e53f6ce35eb82ea8585cf5";
+    const projectId = localStorage.getItem("moderator-projectId");
     const formFields = { ...formValues, projectId };
     const url = getURLForCreatingRemarks();
     socket.emit(url, { ...formFields }, (data) => {

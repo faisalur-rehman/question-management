@@ -8,6 +8,10 @@ export function fetchAllProjects() {
   return api.get("/project");
 }
 
+export function fecthSingleProject(id) {
+  return api.get(`/project/${id}`);
+}
+
 export function createSuperUser(data) {
   return api.post("/auth/register-superuser", { ...data });
 }

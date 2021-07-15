@@ -15,7 +15,6 @@ export default function QuestionsScreen(props) {
       "moderator-projectId",
       props.location.state.project._id
     );
-  console.log("id", localStorage.getItem("moderator-projectId"));
   const [moderatorPermissions, setModeratorPermissions] = useState({});
   const permissions = useApi(projectApi.moderatorPermissions);
   useEffect(() => {

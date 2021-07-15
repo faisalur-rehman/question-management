@@ -8,7 +8,7 @@ const Card = ({ isRemarks, question, remark }) => {
       url,
       {
         questionId: question._id,
-        projectId: "60e53f6ce35eb82ea8585cf5",
+        projectId: localStorage.getItem("presenter-projectId"),
       },
       (data) => {
         console.log(data);
