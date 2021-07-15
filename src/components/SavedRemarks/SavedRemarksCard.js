@@ -59,19 +59,14 @@ const SavedRemarksCard = ({ remark }) => {
         </div>
       </div>
       <div className="card-body">
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum.
-        </p>
+        <p>{remark.description}</p>
       </div>
-      {/* <EditQuestionModal
+      <EditQuestionModal
         show={editRemark}
         onClose={setEditRemark}
         question={remark}
         remark={true}
-      /> */}
+      />
     </section>
   );
 };

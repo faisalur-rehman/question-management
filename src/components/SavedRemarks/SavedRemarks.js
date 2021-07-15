@@ -1,35 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { socket } from "../../apis/socket-connect";
 import AppLoading from "../../common/AppLoading";
 import useFetchQuestions from "../../hooks/useFetchQuestions";
 import SavedRemarksCard from "./SavedRemarksCard";
 
 const SavedRemarks = ({ noRemarks }) => {
   let remarks = noRemarks ? "" : "saved-remarks-panel";
-  const { questions, isLoading } = useFetchQuestions(
-    "all-remarks",
-    "",
-    "updated-remarks"
-  );
-  // console.log("remarks", questions);
-  // console.log("loading", isLoading);
-  if (isLoading) {
-    return <AppLoading />;
-  }
+  const [allRemarks, setAllRemarks] = useState([]);
+
+  useEffect(() => {
+    console.log("getting all remarks");
+    socket.emit("all-remarks", (data) => {
+      console.log("remarks", data);
+      setAllRemarks(data);
+    });
+    socket.on("updated-remarks", (remarks) => {
+      console.log("deleted", remarks);
+      setAllRemarks(remarks);
+    });
+  }, []);
+
   return (
     <div style={{ marginLeft: 10 }}>
       <h2 className="incoming">Saved Remarks</h2>
       <div className={`${remarks}`}>
-        {questions.length === 0 && <NoQuestion />}
-        {!noRemarks ? (
-          <>
-            <SavedRemarksCard />
-            <SavedRemarksCard />
-          </>
-        ) : (
-          <div className="no-question">
-            <i class="far fa-hourglass"></i>
-          </div>
-        )}
+        {allRemarks.length === 0 && <NoQuestion />}
+        {allRemarks.map((remark) => (
+          <SavedRemarksCard key={remark._id} remark={remark} />
+        ))}
       </div>
     </div>
   );

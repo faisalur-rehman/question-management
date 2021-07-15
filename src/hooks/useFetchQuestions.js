@@ -45,7 +45,6 @@ export default function useFetchQuestions(
       if (data.length > 0) {
         setQuestions(data[0].questions);
       }
-
       setIsLoading(false);
     });
   };

@@ -13,10 +13,6 @@ const CreateRemarks = () => {
     const url = getURLForCreatingRemarks();
     socket.emit(url, { ...formFields }, (data) => {
       console.log("socket remarks", data);
-      // setAllRemarks(prevRemarks=>[...prevRemarks,data])
-    });
-    socket.emit("all-remarks", {}, (data) => {
-      console.log("all remarks", data);
     });
   };
 
