@@ -18,6 +18,18 @@ export default function useFetchQuestions(
       });
     });
 
+    socket.on("on-question-update", (question) => {
+      console.log("all questions", questions);
+      setQuestions((prevQuestions) => {
+        return prevQuestions.map((_question) => {
+          if (_question._id === question._id) {
+            return { ...question };
+          }
+          return _question;
+        });
+      });
+    });
+
     socket.on(updatedURL, (question) => {
       console.log("deleted", question);
       setQuestions([...question[0].questions]);

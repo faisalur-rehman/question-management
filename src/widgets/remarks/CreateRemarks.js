@@ -8,8 +8,8 @@ const CreateRemarks = () => {
   const [remarkSelected, setRemarkSelected] = useState();
 
   const handleSubmit = ({ formValues }) => {
-    const project = "60e53f6ce35eb82ea8585cf5";
-    const formFields = { ...formValues, project };
+    const projectId = "60e53f6ce35eb82ea8585cf5";
+    const formFields = { ...formValues, projectId };
     const url = getURLForCreatingRemarks();
     socket.emit(url, { ...formFields }, (data) => {
       console.log("socket remarks", data);
