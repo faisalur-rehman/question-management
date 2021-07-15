@@ -4,7 +4,6 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import AppForm from "../../common/AppForm";
-import { createQuestionSchema } from "../../utils/validations";
 import { socket } from "../../apis/socket-connect";
 import { Field } from "formik";
 
@@ -22,21 +21,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const EditQuestionModal = ({ show, onClose, question, remark, isRemark }) => {
+const EditRemarkModal = ({ show, onClose, remark }) => {
   const initialValues = {
-    name: question.name,
-    questionText: question.questionText,
+    description: remark.description,
   };
   const classes = useStyles();
 
   const handleSubmit = ({ formValues }) => {
     const project = "60e53f6ce35eb82ea8585cf5";
-    const formFields = { ...formValues, project, id: question._id };
+    const formFields = { ...formValues, project, remarkId: remark._id };
 
     // const url = getURLForCreatingQuestions();
 
-    socket.emit("update-question", { ...formFields }, (data) => {
-      console.log("socket updating incoming question", data);
+    socket.emit("update-remark", { ...formFields }, (data) => {
+      console.log("socket updating remark", data);
     });
   };
 
@@ -56,22 +54,12 @@ const EditQuestionModal = ({ show, onClose, question, remark, isRemark }) => {
       >
         <Fade in={show}>
           <div className={classes.paper}>
-            <AppForm
-              initialValues={initialValues}
-              validationSchema={createQuestionSchema}
-              handleSubmit={handleSubmit}
-            >
+            <AppForm initialValues={initialValues} handleSubmit={handleSubmit}>
               <div className="form">
-                {!remark && (
-                  <div className="form-group">
-                    <label htmlFor="pasteName">Paste Name</label>
-                    <Field type="text" name="name" />
-                  </div>
-                )}
                 <div className="form-group">
                   <label htmlFor="pasteQuestion">Edit</label>
 
-                  <Field as="textarea" name="questionText" />
+                  <Field as="textarea" name="description" />
                 </div>
                 <div className="btn-group">
                   <div className="left-btn">
@@ -90,4 +78,4 @@ const EditQuestionModal = ({ show, onClose, question, remark, isRemark }) => {
   );
 };
 
-export default EditQuestionModal;
+export default EditRemarkModal;

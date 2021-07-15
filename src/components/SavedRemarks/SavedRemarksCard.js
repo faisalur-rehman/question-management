@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { socket } from "../../apis/socket-connect";
 import "../../Assets/css/main.css";
 import place from "../../Assets/place.png";
-import EditQuestionModal from "../Modal/EditQuestionModal";
+import EditRemarkModal from "../Modal/EditRemarkModal";
 
 const SavedRemarksCard = ({ remark }) => {
   const [editRemark, setEditRemark] = useState(false);
@@ -61,11 +61,10 @@ const SavedRemarksCard = ({ remark }) => {
       <div className="card-body">
         <p>{remark.description}</p>
       </div>
-      <EditQuestionModal
+      <EditRemarkModal
         show={editRemark}
         onClose={setEditRemark}
-        question={remark}
-        remark={true}
+        remark={remark}
       />
     </section>
   );
