@@ -15,7 +15,7 @@ const LiveQuestionCard = ({ question }) => {
       url,
       {
         questionId: question._id,
-        projectId: "60e53f6ce35eb82ea8585cf5",
+        projectId: localStorage.getItem("moderator-projectId"),
       },
       (data) => {
         console.log(data);

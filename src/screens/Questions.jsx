@@ -9,7 +9,13 @@ import CreateRemarks from "../widgets/remarks/CreateRemarks";
 import useApi from "../hooks/useApi";
 import * as projectApi from "../apis/project";
 
-export default function QuestionsScreen() {
+export default function QuestionsScreen(props) {
+  !localStorage.getItem("moderator-projectId") &&
+    localStorage.setItem(
+      "moderator-projectId",
+      props.location.state.project._id
+    );
+  console.log("id", localStorage.getItem("moderator-projectId"));
   const [moderatorPermissions, setModeratorPermissions] = useState({});
   const permissions = useApi(projectApi.moderatorPermissions);
   useEffect(() => {

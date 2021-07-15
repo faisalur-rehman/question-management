@@ -12,7 +12,7 @@ export default function CreateQuestion() {
   const [questionSelected, setQuestionSelected] = useState();
 
   const handleSubmit = ({ formValues }) => {
-    const project = "60e53f6ce35eb82ea8585cf5";
+    const project = localStorage.getItem("moderator-projectId");
     const formFields = { ...formValues, project };
 
     const url = getURLForCreatingQuestions();

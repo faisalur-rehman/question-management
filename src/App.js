@@ -269,9 +269,7 @@ function App() {
               </div>
             </div>
           </Route>
-          <Route path="/screen24">
-            <QuestionsScreen />
-          </Route>
+          <Route path="/screen24" component={QuestionsScreen} />
         </div>
       </Switch>
     </Router>

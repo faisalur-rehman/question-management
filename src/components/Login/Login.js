@@ -25,7 +25,7 @@ const Login = () => {
       const { data } = await login.request({ email, password });
       if (data.role === "superuser") {
         localStorage.setItem("super-user-token", data.token);
-        history.push("/register");
+        history.push("/permissions");
       } else {
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);
