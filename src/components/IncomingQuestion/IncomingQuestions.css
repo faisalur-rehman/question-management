@@ -1,7 +1,7 @@
 .incoming-quesiton-panel,
 .saved-remarks-panel {
   max-height: 60vh;
-  overflow: auto;
+  overflow-y: scroll;
   background-color: white;
   /* width: 100%; */
 }

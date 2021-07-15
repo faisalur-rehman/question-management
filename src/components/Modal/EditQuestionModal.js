@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const EditQuestionModal = ({ show, onClose, question }) => {
+const EditQuestionModal = ({ show, onClose, question, remark }) => {
   const initialValues = {
     name: question.name,
     questionText: question.questionText,
@@ -62,12 +62,14 @@ const EditQuestionModal = ({ show, onClose, question }) => {
               handleSubmit={handleSubmit}
             >
               <div className="form">
+                {!remark && (
+                  <div className="form-group">
+                    <label htmlFor="pasteName">Paste Name</label>
+                    <Field type="text" name="name" />
+                  </div>
+                )}
                 <div className="form-group">
-                  <label htmlFor="pasteName">Paste Name</label>
-                  <Field type="text" name="name" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="pasteQuestion">Paste Question</label>
+                  <label htmlFor="pasteQuestion">Edit</label>
 
                   <Field as="textarea" name="questionText" />
                 </div>

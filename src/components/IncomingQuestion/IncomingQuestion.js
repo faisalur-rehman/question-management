@@ -16,7 +16,7 @@ const IncomingQuestion = () => {
   }
 
   return (
-    <div style={{ marginLeft: 10, maxHeight: "70vh", overflow: "scroll" }}>
+    <div style={{ marginLeft: 10, maxHeight: "70vh" }}>
       <h2 className="incoming">Incoming Questions</h2>
       <div className="incoming-quesiton-panel">
         {questions.length === 0 && <NoQuestion />}
