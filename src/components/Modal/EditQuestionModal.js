@@ -62,7 +62,7 @@ const EditQuestionModal = ({ show, onClose, question, remark, isRemark }) => {
               handleSubmit={handleSubmit}
             >
               <div className="form">
-                {!remark && (
+                {!isRemark && (
                   <div className="form-group">
                     <label htmlFor="pasteName">Paste Name</label>
                     <Field type="text" name="name" />

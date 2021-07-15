@@ -2,7 +2,7 @@ import React from "react";
 import { socket } from "../../apis/socket-connect";
 import "./PresenterView.css";
 
-const Card = ({ remarks, question }) => {
+const Card = ({ isRemarks, question, remark }) => {
   function handleIncomingQuestion(url) {
     socket.emit(
       url,
@@ -30,8 +30,13 @@ const Card = ({ remarks, question }) => {
           </div>
         </div>
         <div className="right">
-          {!remarks && <h5 className="name">{question && question.name}</h5>}
-          <p>{question && question.questionText}</p>
+          {!isRemarks && (
+            <>
+              <h5 className="name">{question && question.name}</h5>
+              <p>{question && question.questionText}</p>
+            </>
+          )}
+          {isRemarks && <p>{remark.description}</p>}
         </div>
       </div>
     </div>

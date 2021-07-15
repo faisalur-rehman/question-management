@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AppLoading from "../../common/AppLoading";
 import useFetchQuestions from "../../hooks/useFetchQuestions";
 import Card from "./Card";
 import ProjectDuration from "./ProjectDuration";
+import { socket } from "../../apis/socket-connect";
 
 const PresenterView = () => {
+  const [allRemarks, setAllRemarks] = useState([]);
+
+  useEffect(() => {
+    socket.emit("all-remarks", (data) => {
+      console.log("remarks", data);
+      setAllRemarks(data);
+    });
+    socket.on("updated-remarks", (remarks) => {
+      console.log("deleted", remarks);
+      setAllRemarks(remarks);
+    });
+  }, []);
   const { questions, isLoading } = useFetchQuestions(
     "all-presenter-questions",
     "new-presenter-question",
@@ -37,11 +50,13 @@ const PresenterView = () => {
         </div>
         <div className="remarks-presenter">
           <p style={{ color: "white", marginBottom: "5px" }}>Remarks</p>
-          <Card remarks={true} />
-          <hr color="#707070" />
-          <Card remarks={true} />
-          <hr color="#707070" />
-          <Card remarks={true} />
+          {allRemarks.length === 0 && <NoQuestion />}
+          {allRemarks.map((remark) => (
+            <>
+              <Card isRemarks={true} remark={remark} />
+              <hr color="#707070" />
+            </>
+          ))}
         </div>
         <div className="btn-div">
           <button className="attention-btn">Attention</button>
