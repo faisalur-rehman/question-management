@@ -4,10 +4,13 @@ import useFetchQuestions from "../../hooks/useFetchQuestions";
 import Card from "./Card";
 import ProjectDuration from "./ProjectDuration";
 import { socket } from "../../apis/socket-connect";
+import useApi from "../../hooks/useApi";
+import * as projectApi from "../../apis/project";
 
 const PresenterView = () => {
   const [allRemarks, setAllRemarks] = useState([]);
-
+  const [presenterPermissions, setPresenterPermissions] = useState({});
+  const permissions = useApi(projectApi.presenterPermissions);
   useEffect(() => {
     socket.emit("all-remarks", (data) => {
       console.log("remarks", data);
@@ -17,14 +20,21 @@ const PresenterView = () => {
       console.log("deleted", remarks);
       setAllRemarks(remarks);
     });
+
+    async function fetchData() {
+      try {
+        const { data } = await permissions.request();
+        console.log("presenter", data);
+        setPresenterPermissions(data);
+      } catch (_) {}
+    }
+    fetchData();
   }, []);
   const { questions, isLoading } = useFetchQuestions(
     "all-presenter-questions",
     "new-presenter-question",
     "updated-presenter-questions"
   );
-
-  console.log("presenter", questions);
 
   if (isLoading) {
     return <AppLoading />;
@@ -51,12 +61,16 @@ const PresenterView = () => {
         <div className="remarks-presenter">
           <p style={{ color: "white", marginBottom: "5px" }}>Remarks</p>
           {allRemarks.length === 0 && <NoQuestion />}
-          {allRemarks.map((remark) => (
-            <>
-              <Card isRemarks={true} remark={remark} />
-              <hr color="#707070" />
-            </>
-          ))}
+          {presenterPermissions && presenterPermissions.isRemarksVisible ? (
+            allRemarks.map((remark) => (
+              <>
+                <Card isRemarks={true} remark={remark} />
+                <hr color="#707070" />
+              </>
+            ))
+          ) : (
+            <NoQuestion />
+          )}
         </div>
         <div className="btn-div">
           <button className="attention-btn">Attention</button>
