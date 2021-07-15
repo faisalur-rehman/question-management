@@ -4,7 +4,7 @@ import "../../Assets/css/main.css";
 import place from "../../Assets/place.png";
 import EditRemarkModal from "../Modal/EditRemarkModal";
 
-const SavedRemarksCard = ({ remark }) => {
+const SavedRemarksCard = ({ remark, moderatorPermissions }) => {
   const [editRemark, setEditRemark] = useState(false);
   const [clicked, setClicked] = useState(false);
   let show = !clicked ? "menu-icon-none" : "";
@@ -25,11 +25,13 @@ const SavedRemarksCard = ({ remark }) => {
     <section className="IncomingQuestionCard" style={{ width: 440 }}>
       <div className="card-header" style={{ alignItems: "center" }}>
         <div>
-          <i
-            className="fa fa-ellipsis-v"
-            style={{ cursor: "pointer" }}
-            onClick={() => setClicked(!clicked)}
-          ></i>
+          {moderatorPermissions.canEditRemarks && (
+            <i
+              className="fa fa-ellipsis-v"
+              style={{ cursor: "pointer" }}
+              onClick={() => setClicked(!clicked)}
+            ></i>
+          )}
           <i
             className={`fas fa-edit ${show}`}
             style={{

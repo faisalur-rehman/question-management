@@ -4,7 +4,7 @@ import "./IncomingQuestions.css";
 import AppLoading from "../../common/AppLoading";
 import useFetchQuestions from "../../hooks/useFetchQuestions";
 
-const IncomingQuestion = () => {
+const IncomingQuestion = ({ moderatorPermissions }) => {
   const { questions, isLoading } = useFetchQuestions(
     "all-incoming-questions",
     "new-incoming-question",
@@ -22,7 +22,11 @@ const IncomingQuestion = () => {
         {questions.length === 0 && <NoQuestion />}
 
         {questions.map((question) => (
-          <IncomingQuestionCard key={question._id} question={question} />
+          <IncomingQuestionCard
+            key={question._id}
+            question={question}
+            moderatorPermissions={moderatorPermissions}
+          />
         ))}
       </div>
     </div>

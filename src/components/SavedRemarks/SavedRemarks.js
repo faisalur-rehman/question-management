@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { socket } from "../../apis/socket-connect";
 import SavedRemarksCard from "./SavedRemarksCard";
 
-const SavedRemarks = ({ noRemarks }) => {
+const SavedRemarks = ({ noRemarks, moderatorPermissions }) => {
   let remarks = noRemarks ? "" : "saved-remarks-panel";
   const [allRemarks, setAllRemarks] = useState([]);
 
@@ -23,7 +23,11 @@ const SavedRemarks = ({ noRemarks }) => {
       <div className={`${remarks}`}>
         {allRemarks.length === 0 && <NoQuestion />}
         {allRemarks.map((remark) => (
-          <SavedRemarksCard key={remark._id} remark={remark} />
+          <SavedRemarksCard
+            key={remark._id}
+            remark={remark}
+            moderatorPermissions={moderatorPermissions}
+          />
         ))}
       </div>
     </div>

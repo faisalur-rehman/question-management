@@ -25,11 +25,13 @@ const IncomingQuestionCard = (props) => {
     <section className="IncomingQuestionCard">
       <div className="card-header">
         <div>
-          <i
-            className="fa fa-ellipsis-v"
-            style={{ cursor: "pointer" }}
-            onClick={() => setClicked(!clicked)}
-          ></i>
+          {props.moderatorPermissions.canEditQuestions && (
+            <i
+              className="fa fa-ellipsis-v"
+              style={{ cursor: "pointer" }}
+              onClick={() => setClicked(!clicked)}
+            ></i>
+          )}
           <i
             className={`fas fa-edit ${show}`}
             style={{

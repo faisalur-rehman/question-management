@@ -1,11 +1,9 @@
 import "./App.css";
-// import ArchivedQuestions from "./components/ArchivedQuestions/ArchivedQuestions";
 import "./components/ArchivedQuestions/ArcheivedPanel.css";
 import DashboardHeader from "./components/DasboardHeader/DashboardHeader";
 import IncomingQuestion from "./components/IncomingQuestion/IncomingQuestion";
 import LiveQuestions from "./components/LiveQuestions/LiveQuestions";
 import NewProject from "./components/NewProject/NewProject";
-// import ProfileSetting from "./components/ProfileSetting/ProfileSetting";
 import Projects from "./components/Projects/Projects";
 import Questions from "./components/Questions/Questions";
 import SavedRemarks from "./components/SavedRemarks/SavedRemarks";
@@ -15,14 +13,12 @@ import DarkArchived from "./components/DarkArchived/DarkArchived";
 import PresenterLiveQuestions from "./components/PresenterLiveQuestions/PresenterLiveQuestions";
 import ModeratorView from "./components/ModeratorView/ModeratorView";
 import AllScreens from "./components/AllScreens/AllScreens";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import PresenterView from "./components/PresenterView/PresenterView";
 import AlarmScreen from "./components/AlarmScreen/AlarmScreen";
 import Register from "./components/auth/Register";
-// import TransitionsModal from "./components/Modal/Modal";
 import QuestionsScreen from "./screens/Questions";
-// import Login from "./components/auth/Login";
 import SuperUser from "./components/auth/SuperUser";
 import ProjectSetting from "./components/ProjectSetting/ProjectSetting";
 

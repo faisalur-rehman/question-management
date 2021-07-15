@@ -29,6 +29,7 @@ const PresenterView = () => {
       } catch (_) {}
     }
     fetchData();
+    //eslint-disable-next-line
   }, []);
   const { questions, isLoading } = useFetchQuestions(
     "all-presenter-questions",
