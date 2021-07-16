@@ -9,7 +9,6 @@ import Header from "../Header/Header";
 import * as projectApi from "../../apis/project";
 import useApi from "../../hooks/useApi";
 import AppLoading from "../../common/AppLoading";
-// import Projects from "../Projects/Projects";
 
 const Projects = () => {
   const history = useHistory();

@@ -6,6 +6,7 @@ import ProjectDuration from "./ProjectDuration";
 import { socket } from "../../apis/socket-connect";
 import useApi from "../../hooks/useApi";
 import * as projectApi from "../../apis/project";
+import { Button } from "reactstrap";
 
 const PresenterView = (props) => {
   console.log("props", props.location);
@@ -37,6 +38,11 @@ const PresenterView = (props) => {
     fetchData();
     //eslint-disable-next-line
   }, []);
+
+  function handleStopTimer() {
+    socket.emit("stop-timer", {}, (data) => console.log("stopped", data));
+  }
+
   const { questions, isLoading } = useFetchQuestions(
     "all-presenter-questions",
     "new-presenter-question",
@@ -49,6 +55,9 @@ const PresenterView = (props) => {
   return (
     <div style={{ display: "flex", backgroundColor: "black" }}>
       <div style={{ width: "67%", margin: "20px 10px", height: "100vh" }}>
+        <Button variant="outline-secondary" onClick={handleStopTimer}>
+          Stop Timer
+        </Button>
         <p style={{ color: "white", marginBottom: 5 }}>Presenter Questions</p>
         {questions.length === 0 && <NoQuestion />}
         {questions.map((question) => (

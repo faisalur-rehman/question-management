@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../Assets/message.png";
 import useApi from "../../hooks/useApi";
 import "./DashboardHeader.css";
 import * as projectApi from "../../apis/project";
 import AppLoading from "../../common/AppLoading";
-
+import { socket } from "../../apis/socket-connect";
 const DashboardHeader = () => {
   const { request, isLoading, data } = useApi(projectApi.fecthSingleProject);
-
+  const [timer, setTimer] = useState("");
   useEffect(() => {
     request(localStorage.getItem("moderator-projectId"));
+
+    socket.on("get-timer", (data) => {
+      setTimer(data);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (isLoading) {
@@ -38,7 +42,7 @@ const DashboardHeader = () => {
             <i className="fal fa-clock"></i>
           </div>
           <div>
-            <p className="dashboard-header-col3-icon2">--:--</p>
+            <p className="dashboard-header-col3-icon2">{timer}</p>
           </div>
         </div>
       </div>
