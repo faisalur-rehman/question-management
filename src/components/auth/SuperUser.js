@@ -29,7 +29,7 @@ const SuperUser = () => {
     e.preventDefault();
     try {
       await superUser.request({ email, password, name });
-      history.push("/login");
+      history.push("/");
     } catch (_) {}
   }
 

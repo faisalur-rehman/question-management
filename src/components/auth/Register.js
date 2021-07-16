@@ -32,7 +32,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await auth.request({ email, password, role, name });
-      history.push("/login");
+      history.push("/");
     } catch (_) {}
   }
 

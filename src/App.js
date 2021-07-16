@@ -12,7 +12,7 @@ import LiveRemarks from "./components/LiveRemarks/LiveRemarks";
 import DarkArchived from "./components/DarkArchived/DarkArchived";
 import PresenterLiveQuestions from "./components/PresenterLiveQuestions/PresenterLiveQuestions";
 import ModeratorView from "./components/ModeratorView/ModeratorView";
-import AllScreens from "./components/AllScreens/AllScreens";
+// import AllScreens from "./components/AllScreens/AllScreens";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import PresenterView from "./components/PresenterView/PresenterView";
@@ -30,21 +30,18 @@ function App() {
           <Route path="/create-superuser">
             <SuperUser />
           </Route>
-          <Route path="/login">
+          <Route path="/">
             <Login />
           </Route>
           <Route path="/register">
             <Register />
           </Route>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <div className="body">
               <DashboardHeader />
               <AllScreens />
             </div>
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
+          </Route> */}
           <Route path="/projects">
             <div className="sidebar-header body">
               <SideBar />
