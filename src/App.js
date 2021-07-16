@@ -30,7 +30,7 @@ function App() {
           <Route path="/create-superuser">
             <SuperUser />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Login />
           </Route>
           <Route path="/register">

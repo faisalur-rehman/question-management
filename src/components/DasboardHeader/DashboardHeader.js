@@ -10,12 +10,12 @@ const DashboardHeader = () => {
   const [timer, setTimer] = useState("");
   useEffect(() => {
     request(localStorage.getItem("moderator-projectId"));
-
     socket.on("get-timer", (data) => {
       setTimer(data);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  console.log("header", data);
   if (isLoading) {
     return <AppLoading />;
   }
